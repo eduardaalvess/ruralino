@@ -23,7 +23,7 @@ public class Telas {
     public void cancelAndReturn() throws IOException {
 
         Stage cancelar = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/FXML/pagInicial.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/gui/FXML/pagInicial.fxml"));
         cancelar.setTitle("Ruralino E Seus Amigos");
         Scene scene = new Scene(root);
         cancelar.setScene(scene);
@@ -41,7 +41,7 @@ public class Telas {
     public void pessoasScene() throws IOException {
 
         Stage pessoas = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/FXML/cadastroPessoas.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/gui/FXML/cadastroPessoas.fxml"));
         Scene scene = new Scene(root);
         pessoas.setTitle("Ruralino E Seus Amigos");
         pessoas.setResizable(false);
@@ -58,7 +58,7 @@ public class Telas {
 
 
         Stage grupos = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/FXML/cadastroGrupos.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/gui/FXML/cadastroGrupos.fxml"));
         Scene scene = new Scene(root);
         grupos.setTitle("Ruralino E Seus Amigos");
         grupos.setResizable(false);
@@ -74,7 +74,7 @@ public class Telas {
     public void presentesScene() throws IOException {
 
         Stage presentes = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/FXML/cadastroPresentes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/gui/FXML/cadastroPresentes.fxml"));
         Scene scene = new Scene(root);
         presentes.setTitle("Ruralino E Seus Amigos");
         presentes.setResizable(false);
@@ -90,7 +90,7 @@ public class Telas {
     public void sorteioScene() throws IOException {
 
         Stage sorteio = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/FXML/sorteioAmigoSecreto.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/gui/FXML/sorteioAmigoSecreto.fxml"));
         Scene scene = new Scene(root);
         sorteio.setTitle("Ruralino E Seus Amigos");
         sorteio.setResizable(false);
@@ -102,7 +102,7 @@ public class Telas {
     public void adcPresentes() throws IOException {
 
         Stage adcGift = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/FXML/cadastroPresentesPessoas.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/gui/FXML/cadastroPresentesPessoas.fxml"));
         Scene scene = new Scene(root);
         adcGift.setTitle("Ruralino E Seus Amigos");
         adcGift.setResizable(false);
@@ -114,7 +114,7 @@ public class Telas {
     public void consultarAmigoSecreto() throws IOException {
 
         Stage consulta = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/FXML/consultaAmigoSecreto.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/gui/FXML/consultaAmigoSecreto.fxml"));
         Scene scene = new Scene(root);
         consulta.setTitle("Ruralino E Seus Amigos");
         consulta.setResizable(false);
@@ -126,7 +126,7 @@ public class Telas {
     public void adcPessoas() throws IOException {
 
         Stage addPessoas = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/FXML/adcPessoasGrupos.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/gui/FXML/adcPessoasGrupos.fxml"));
         Scene scene = new Scene(root);
         addPessoas.setTitle("Ruralino E Seus Amigos");
         addPessoas.setResizable(false);

@@ -1,4 +1,4 @@
-package gui.Controllers;
+package view.gui.Controllers;
 
 public class ConsultaAmigoSecretoController {
 }

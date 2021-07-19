@@ -1,38 +1,40 @@
-package gui.Controllers;
+package view.gui.Controllers;
 
 import control.Telas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class SorteioAmigoSecretoController {
+public class AdcPessoasGruposController {
 
     @FXML
-    private ChoiceBox<?> escolherGrupoParaSorteio;
+    private ChoiceBox<?> selecioneGrupo;
 
     @FXML
-    private Button realizarSorteioButton;
+    private Button salvarPessoaGrupo;
 
     @FXML
-    private Button consultarAmigoButton;
+    private ListView<?> tableListTodasPessoas;
+
+    @FXML
+    private ListView<?> tableListGrupo;
 
     @FXML
     private Button cancelButton;
 
     @FXML
-    void consultarAmigoSecreto(ActionEvent event) throws IOException {
-        Stage close = (Stage) consultarAmigoButton.getScene().getWindow();
-        close.close();
-        Telas telas = new Telas();
-        telas.consultarAmigoSecreto();
-    }
+    private Button addPessoaGrupoButton;
 
     @FXML
-    void realizarSorteio(ActionEvent event) throws IOException {
+    private Button deletePessoaGrupo;
+
+    @FXML
+    void addPersonInGroup(ActionEvent event) {
 
     }
 
@@ -44,5 +46,14 @@ public class SorteioAmigoSecretoController {
         telas.cancelAndReturn();
     }
 
-}
+    @FXML
+    void deletePersonInGroup(ActionEvent event) {
 
+    }
+
+    @FXML
+    void saveButton(ActionEvent event) {
+
+    }
+
+}

@@ -1,4 +1,4 @@
-package gui.Controllers;
+package view.gui.Controllers;
 
 import control.Telas;
 import javafx.event.ActionEvent;
