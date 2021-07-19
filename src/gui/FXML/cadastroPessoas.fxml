@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #083669;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #083669;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controllers.CadastroPessoasController">>
    <children>
       <Label layoutX="50.0" layoutY="81.0" text="Nome Completo" textFill="#ff8000">
          <font>
@@ -25,30 +24,40 @@
             <Font name="Malgun Gothic Semilight" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="213.0" layoutY="82.0" prefWidth="200.0">
+      <TextField fx:id="nomeCadastro" layoutX="213.0" layoutY="82.0" prefWidth="200.0" promptText="Nome Completo">
          <font>
             <Font name="Malgun Gothic Semilight" size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="213.0" layoutY="128.0" prefWidth="200.0">
+      <TextField fx:id="apelidoCadastro" layoutX="213.0" layoutY="128.0" prefWidth="200.0" promptText="Apelido">
          <font>
             <Font name="Malgun Gothic Semilight" size="14.0" />
          </font>
       </TextField>
-      <PasswordField layoutX="213.0" layoutY="174.0" prefWidth="200.0">
+      <PasswordField fx:id="senhaCadastro" layoutX="213.0" layoutY="174.0" prefWidth="200.0" promptText="Senha">
          <font>
             <Font name="Malgun Gothic Semilight" size="14.0" />
          </font>
       </PasswordField>
-      <Button layoutX="90.0" layoutY="300.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #FF8000;" text="Salvar">
+      <Button fx:id="salvarCadastro" layoutX="90.0" layoutY="250.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #FF8000;" text="Salvar">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="350.0" layoutY="300.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #FF8000;" text="Presentes">
+      <Button fx:id="adcPresentesButton" layoutX="350.0" layoutY="250.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #FF8000;" text="Presentes">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
+      <Button fx:id="cancelarCadastro" layoutX="225.0" layoutY="347.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #FF8000;" text="Cancelar">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="153.0" text="Faça Seu Cadastro!" textFill="#ff8000">
+         <font>
+            <Font name="Ink Free" size="36.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

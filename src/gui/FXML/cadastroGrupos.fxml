@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #083669;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FXML.CadastroGrupos">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #083669;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controllers.CadastroGruposController">
    <children>
       <Label layoutX="149.0" text="Cadastro de Grupos" textFill="#ff8000">
          <font>
@@ -27,14 +26,19 @@
       </Label>
       <TextField fx:id="nomeGrupo" layoutX="210.0" layoutY="127.0" prefHeight="30.0" prefWidth="200.0" />
       <DatePicker fx:id="dataSorteio" layoutX="210.0" layoutY="170.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #083669;" />
-      <Button fx:id="salvarGrupo" layoutX="133.0" layoutY="296.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #ff8000;" text="Salvar" textFill="#083669">
+      <Button fx:id="salvarGrupo" layoutX="133.0" layoutY="248.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #ff8000;" text="Salvar" textFill="#083669">
          <font>
             <Font name="Malgun Gothic Semilight" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="cancelarGrupo" layoutX="352.0" layoutY="296.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #ff8000;" text="Cancelar" textFill="#083669">
+      <Button fx:id="cancelarGrupo" layoutX="352.0" layoutY="248.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #ff8000;" text="Cancelar" textFill="#083669">
          <font>
             <Font name="Malgun Gothic Semilight" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="51.0" layoutY="345.0" mnemonicParsing="false" style="-fx-background-color: #083669;" text="Clique aqui para adicionar um cadastro já existente a um grupo!" textFill="#ff8000" underline="true">
+         <font>
+            <Font name="Ink Free" size="18.0" />
          </font>
       </Button>
    </children>
