@@ -39,8 +39,11 @@ public class CadastroPessoasController {
     }
 
     @FXML
-    void clickGiftsButton(ActionEvent event) {
-
+    void clickGiftsButton(ActionEvent event) throws IOException {
+        Stage close = (Stage) adcPresentesButton.getScene().getWindow();
+        close.close();
+        Telas telas = new Telas();
+        telas.adcPresentes();
     }
 
     @FXML

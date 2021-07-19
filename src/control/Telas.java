@@ -99,5 +99,42 @@ public class Telas {
         sorteio.show();
     }
 
+    public void adcPresentes() throws IOException {
+
+        Stage adcGift = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/FXML/cadastroPresentesPessoas.fxml"));
+        Scene scene = new Scene(root);
+        adcGift.setTitle("Ruralino E Seus Amigos");
+        adcGift.setResizable(false);
+        adcGift.initStyle(StageStyle.TRANSPARENT);
+        adcGift.setScene(scene);
+        adcGift.show();
+    }
+
+    public void consultarAmigoSecreto() throws IOException {
+
+        Stage consulta = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("gui/FXML/consultaAmigoSecreto.fxml"));
+        Scene scene = new Scene(root);
+        consulta.setTitle("Ruralino E Seus Amigos");
+        consulta.setResizable(false);
+        consulta.initStyle(StageStyle.TRANSPARENT);
+        consulta.setScene(scene);
+        consulta.show();
+    }
+
+    public void adcPessoas() throws IOException {
+
+        Stage addPessoas = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("gui/FXML/adcPessoasGrupos.fxml"));
+        Scene scene = new Scene(root);
+        addPessoas.setTitle("Ruralino E Seus Amigos");
+        addPessoas.setResizable(false);
+        addPessoas.initStyle(StageStyle.TRANSPARENT);
+        addPessoas.setScene(scene);
+        addPessoas.show();
+    }
+
+
 
 }

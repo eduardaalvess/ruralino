@@ -25,7 +25,7 @@ public class AdcPessoasGruposController {
     private ListView<?> tableListGrupo;
 
     @FXML
-    private Button cancelarGrupo;
+    private Button cancelButton;
 
     @FXML
     private Button addPessoaGrupoButton;
@@ -39,8 +39,8 @@ public class AdcPessoasGruposController {
     }
 
     @FXML
-    void clickToReturn(ActionEvent event) throws IOException {
-        Stage close = (Stage) cancelarGrupo.getScene().getWindow();
+    void returnToPagInicial(ActionEvent event) throws IOException {
+        Stage close = (Stage) cancelButton.getScene().getWindow();
         close.close();
         Telas telas = new Telas();
         telas.cancelAndReturn();
