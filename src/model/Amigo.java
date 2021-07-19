@@ -1,2 +1,10 @@
-package model;public class Amigo {
+package model;
+
+public class Amigo {
+
+   private String nomeCompleto;
+   private String apelido;
+   private String senha;
+
+
 }

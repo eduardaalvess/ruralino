@@ -114,7 +114,7 @@ public class Telas {
     public void consultarAmigoSecreto() throws IOException {
 
         Stage consulta = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("gui/FXML/consultaAmigoSecreto.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/FXML/consultaAmigoSecreto.fxml"));
         Scene scene = new Scene(root);
         consulta.setTitle("Ruralino E Seus Amigos");
         consulta.setResizable(false);
@@ -126,7 +126,7 @@ public class Telas {
     public void adcPessoas() throws IOException {
 
         Stage addPessoas = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("gui/FXML/adcPessoasGrupos.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/FXML/adcPessoasGrupos.fxml"));
         Scene scene = new Scene(root);
         addPessoas.setTitle("Ruralino E Seus Amigos");
         addPessoas.setResizable(false);
