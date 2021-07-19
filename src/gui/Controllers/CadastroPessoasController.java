@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -31,6 +32,8 @@ public class CadastroPessoasController {
 
     @FXML
     void clickCancelButton(ActionEvent event) throws IOException {
+        Stage close = (Stage) cancelarCadastro.getScene().getWindow();
+        close.close();
         Telas telas = new Telas();
         telas.cancelAndReturn();
     }

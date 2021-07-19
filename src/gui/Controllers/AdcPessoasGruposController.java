@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -39,6 +40,8 @@ public class AdcPessoasGruposController {
 
     @FXML
     void clickToReturn(ActionEvent event) throws IOException {
+        Stage close = (Stage) cancelarGrupo.getScene().getWindow();
+        close.close();
         Telas telas = new Telas();
         telas.cancelAndReturn();
     }

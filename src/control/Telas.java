@@ -29,7 +29,9 @@ public class Telas {
         cancelar.setScene(scene);
         cancelar.initStyle(StageStyle.TRANSPARENT);
         cancelar.setResizable(false);
+        cancelar.close();
         cancelar.show();
+
     }
 
     /*
@@ -54,7 +56,7 @@ public class Telas {
 
     public void gruposScene() throws IOException {
 
-        
+
         Stage grupos = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/gui/FXML/cadastroGrupos.fxml"));
         Scene scene = new Scene(root);

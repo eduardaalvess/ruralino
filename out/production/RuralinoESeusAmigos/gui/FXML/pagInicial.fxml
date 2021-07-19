@@ -9,43 +9,43 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #083669;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controllers.PagInicialController">
    <children>
-      <Button fx:id="pessoasButton" layoutX="50.0" layoutY="240.0" mnemonicParsing="false" onAction="#goToPessoas" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #FF8000;" text="Pessoas" textFill="#083669">
+      <Button fx:id="pessoasButton" layoutX="47.0" layoutY="220.0" mnemonicParsing="false" onAction="#goToPessoas" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: #083669; -fx-border-color: #7294ba;" text="Pessoas" textFill="#ff8000">
          <font>
-            <Font name="Malgun Gothic Semilight" size="18.0" />
+            <Font name="Ink Free" size="20.0" />
          </font>
       </Button>
-      <AnchorPane prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #FF8000;">
+      <AnchorPane prefHeight="152.0" prefWidth="600.0" style="-fx-background-color: #FF8000;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="113.0" fitWidth="200.0" layoutX="215.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/friends.png" />
                </image>
             </ImageView>
-            <Label layoutX="126.0" layoutY="118.0" prefHeight="39.0" prefWidth="348.0" text="Ruralino e Seus Amigos" textFill="#083669">
+            <Label layoutX="126.0" layoutY="84.0" prefHeight="39.0" prefWidth="348.0" text="Ruralino e Seus Amigos" textFill="#083669">
                <font>
                   <Font name="Ink Free" size="36.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <Button fx:id="gruposButton" layoutX="185.0" layoutY="240.0" mnemonicParsing="false" onAction="#goToGrupos" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #FF8000;" text="Grupos" textFill="#083669">
+      <Button fx:id="gruposButton" layoutX="185.0" layoutY="220.0" mnemonicParsing="false" onAction="#goToGrupos" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: #083669; -fx-border-color: #7294ba;" text="Grupos" textFill="#ff8000">
          <font>
-            <Font name="Malgun Gothic Semilight" size="18.0" />
+            <Font name="Ink Free" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="presentesButton" layoutX="315.0" layoutY="240.0" mnemonicParsing="false" onAction="#goToPresentes" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #FF8000;" text="Presentes" textFill="#083669">
+      <Button fx:id="presentesButton" layoutX="315.0" layoutY="220.0" mnemonicParsing="false" onAction="#goToPresentes" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: #083669; -fx-border-color: #7294ba;" text="Presentes" textFill="#ff8000">
          <font>
-            <Font name="Malgun Gothic Semilight" size="18.0" />
+            <Font name="Ink Free" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="sorteioButton" layoutX="450.0" layoutY="240.0" mnemonicParsing="false" onAction="#goToSorteio" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #FF8000;" text="Sorteio" textFill="#083669">
+      <Button fx:id="sorteioButton" layoutX="450.0" layoutY="220.0" mnemonicParsing="false" onAction="#goToSorteio" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: #083669; -fx-border-color: #7294ba;" text="Sorteio" textFill="#ff8000">
          <font>
-            <Font name="Malgun Gothic Semilight" size="18.0" />
+            <Font name="Ink Free" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="sairButton" layoutX="250.0" layoutY="339.0" mnemonicParsing="false" onAction="#closeSystem" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #FF8000;" text="Sair" textFill="#083669">
+      <Button fx:id="sairButton" layoutX="250.0" layoutY="340.0" mnemonicParsing="false" onAction="#closeSystem" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #083669; -fx-border-color: #7294ba;" text="Sair" textFill="#ff8000">
          <font>
-            <Font name="Malgun Gothic Semilight" size="18.0" />
+            <Font name="Ink Free" size="15.0" />
          </font>
       </Button>
    </children>

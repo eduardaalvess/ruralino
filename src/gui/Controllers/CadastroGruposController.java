@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -33,6 +34,8 @@ public class CadastroGruposController {
 
     @FXML
     void clickToCancel(ActionEvent event) throws IOException {
+        Stage close = (Stage) cancelarGrupo.getScene().getWindow();
+        close.close();
         Telas telas = new Telas();
         telas.cancelAndReturn();
     }
