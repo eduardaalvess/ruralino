@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #083669;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadastroGruposController">
+   <children>
+      <Label layoutX="149.0" text="Cadastro de Grupos" textFill="#ff8000">
+         <font>
+            <Font name="Ink Free" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="140.0" layoutY="115.0" text="Nome:" textFill="#ff8000">
+         <font>
+            <Font name="Ink Free" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="160.0" text="Data do Sorteio:" textFill="#ff8000">
+         <font>
+            <Font name="Ink Free" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nomeGrupo" layoutX="210.0" layoutY="127.0" prefHeight="30.0" prefWidth="200.0">
+         <font>
+            <Font name="Malgun Gothic Semilight" size="14.0" />
+         </font></TextField>
+      <DatePicker fx:id="dataSorteio" layoutX="210.0" layoutY="170.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #083669;" />
+      <Button fx:id="salvarGrupo" layoutX="251.0" layoutY="228.0" mnemonicParsing="false" onAction="#clickToSave" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #083669; -fx-border-color: #7294ba;" text="Salvar" textFill="#ff8000">
+         <font>
+            <Font name="Ink Free" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="cancelarGrupo" layoutX="236.0" layoutY="295.0" mnemonicParsing="false" onAction="#clickToCancel" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #083669; -fx-border-color: #7294ba;" text="Cancelar" textFill="#ff8000">
+         <font>
+            <Font name="Ink Free" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="addPessoaEmGrupo" layoutY="353.0" mnemonicParsing="false" onAction="#clickToAddPersonInGroup" style="-fx-background-color: #083669;" text="Clique aqui para adicionar uma pessoa com cadastro já existente a um grupo!" textFill="#ff8000" underline="true">
+         <font>
+            <Font name="Ink Free" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
