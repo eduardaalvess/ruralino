@@ -2,7 +2,6 @@ package DAO;
 
 import dados.ConnectionFactory;
 import javafx.scene.control.Alert;
-import model.Amigo;
 
 import java.sql.*;
 
