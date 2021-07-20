@@ -1,5 +1,8 @@
 package model;
 
+import DAO.PresenteDAO;
+import dados.ConnectionFactory;
+
 public class Presente {
 
     private String categoria;
@@ -43,6 +46,11 @@ public class Presente {
     }
 
     public void cadastrarPresente(Presente presente) {
+
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        connectionFactory.getConnection();
+        PresenteDAO presenteDAO = new PresenteDAO();
+        presenteDAO.create(categoria, descricao, preco);
 
     }
 }

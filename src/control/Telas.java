@@ -9,6 +9,7 @@ Organizando as cenas do sistema.
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -104,6 +105,7 @@ public class Telas {
         Stage adcGift = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/view/gui/FXML/cadastroPresentesPessoas.fxml"));
         Scene scene = new Scene(root);
+       // scene.setFill(Color.TRANSPARENT);
         adcGift.setTitle("Ruralino E Seus Amigos");
         adcGift.setResizable(false);
         adcGift.initStyle(StageStyle.TRANSPARENT);

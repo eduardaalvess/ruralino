@@ -6,25 +6,34 @@ import java.util.logging.Logger;
 
 public class ConnectionFactory {
 
-    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String DBURL = "jdbc:mysql://localhost/ruralino";
-    private static final String DBUSER = "root";
-    private static final String DBPASS = "hoc23357";
+    Connection databaseLink;
 
-    public static Connection getConnection()  {
+    public Connection getConnection()  {
+
+
+
+        String driver = "com.mysql.cj.jdbc.Driver";
+        String dburl = "jdbc:mysql://localhost/";
+        String dbuser = "root";
+        String dbpass = "hoc23357";
+        String dbname = "ruralino";
+        String url = dburl + dbname;
 
         try
         {
-            Class.forName(DRIVER);
+            Class.forName(driver);
 
-            return DriverManager.getConnection(DBURL, DBUSER, DBPASS);
+            databaseLink = DriverManager.getConnection(url, dbuser, dbpass);
 
-        } catch (ClassNotFoundException | SQLException ex)
+        } catch (Exception ex)
         {
-            throw new RuntimeException("Erro na conexão", ex);
+           ex.printStackTrace();
+           ex.getCause();
         }
 
+        return databaseLink;
     }
+
 
     public static void closeConnection(Connection conEx)
     {

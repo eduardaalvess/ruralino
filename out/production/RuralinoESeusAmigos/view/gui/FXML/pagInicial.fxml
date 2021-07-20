@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #083669;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controllers.PagInicialController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #083669;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.gui.Controllers.PagInicialController">
    <children>
       <Button fx:id="pessoasButton" layoutX="47.0" layoutY="220.0" mnemonicParsing="false" onAction="#goToPessoas" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: #083669; -fx-border-color: #7294ba;" text="Pessoas" textFill="#ff8000">
          <font>
@@ -18,7 +18,7 @@
          <children>
             <ImageView fitHeight="113.0" fitWidth="200.0" layoutX="215.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/friends.png" />
+                  <Image url="@../../../images/friends.png" />
                </image>
             </ImageView>
             <Label layoutX="126.0" layoutY="84.0" prefHeight="39.0" prefWidth="348.0" text="Ruralino e Seus Amigos" textFill="#083669">
