@@ -26,7 +26,7 @@
       </Label>
       <TextField fx:id="nomeCadastro" layoutX="215.0" layoutY="82.0" prefWidth="200.0">
          <font>
-            <Font name="Ink Free" size="14.0" />
+            <Font name="Malgun Gothic Semilight" size="14.0" />
          </font>
       </TextField>
       <TextField fx:id="apelidoCadastro" layoutX="215.0" layoutY="128.0" prefWidth="200.0">

@@ -9,6 +9,7 @@ Organizando as cenas do sistema.
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -25,6 +26,8 @@ public class TelasController {
         Stage cancelar = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/view/pagInicial.fxml"));
         cancelar.setTitle("Ruralino E Seus Amigos");
+        Image image = new Image("/images/presente.png");
+        cancelar.getIcons().add(image);
         Scene scene = new Scene(root);
         cancelar.setScene(scene);
         cancelar.initStyle(StageStyle.TRANSPARENT);
@@ -42,6 +45,8 @@ public class TelasController {
 
         Stage pessoas = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/view/cadastroPessoas.fxml"));
+        Image image = new Image("/images/presente.png");
+        pessoas.getIcons().add(image);
         Scene scene = new Scene(root);
         pessoas.setTitle("Ruralino E Seus Amigos");
         pessoas.setResizable(false);
@@ -59,6 +64,8 @@ public class TelasController {
 
         Stage grupos = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/view/cadastroGrupos.fxml"));
+        Image image = new Image("/images/presente.png");
+        grupos.getIcons().add(image);
         Scene scene = new Scene(root);
         grupos.setTitle("Ruralino E Seus Amigos");
         grupos.setResizable(false);
@@ -75,6 +82,8 @@ public class TelasController {
 
         Stage presentes = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/view/cadastroPresentes.fxml"));
+        Image image = new Image("/images/presente.png");
+        presentes.getIcons().add(image);
         Scene scene = new Scene(root);
         presentes.setTitle("Ruralino E Seus Amigos");
         presentes.setResizable(false);
@@ -91,6 +100,8 @@ public class TelasController {
 
         Stage sorteio = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/view/sorteioAmigoSecreto.fxml"));
+        Image image = new Image("/images/presente.png");
+        sorteio.getIcons().add(image);
         Scene scene = new Scene(root);
         sorteio.setTitle("Ruralino E Seus Amigos");
         sorteio.setResizable(false);
@@ -103,8 +114,9 @@ public class TelasController {
 
         Stage adcGift = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/view/cadastroPresentesPessoas.fxml"));
+        Image image = new Image("/images/presente.png");
+        adcGift.getIcons().add(image);
         Scene scene = new Scene(root);
-       // scene.setFill(Color.TRANSPARENT);
         adcGift.setTitle("Ruralino E Seus Amigos");
         adcGift.setResizable(false);
         adcGift.initStyle(StageStyle.TRANSPARENT);
@@ -116,6 +128,8 @@ public class TelasController {
 
         Stage consulta = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/view/consultaAmigoSecreto.fxml"));
+        Image image = new Image("/images/presente.png");
+        consulta.getIcons().add(image);
         Scene scene = new Scene(root);
         consulta.setTitle("Ruralino E Seus Amigos");
         consulta.setResizable(false);
@@ -128,6 +142,8 @@ public class TelasController {
 
         Stage addPessoas = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/view/adcPessoasGrupos.fxml"));
+        Image image = new Image("/images/presente.png");
+        addPessoas.getIcons().add(image);
         Scene scene = new Scene(root);
         addPessoas.setTitle("Ruralino E Seus Amigos");
         addPessoas.setResizable(false);

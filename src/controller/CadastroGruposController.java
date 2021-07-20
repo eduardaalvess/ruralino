@@ -27,7 +27,12 @@ public class CadastroGruposController {
     private Button addPessoaEmGrupo;
 
     @FXML
-    void clickToAddPersonInGroup(ActionEvent event) {
+    void clickToAddPersonInGroup(ActionEvent event) throws IOException {
+
+        Stage close = (Stage) addPessoaEmGrupo.getScene().getWindow();
+        close.close();
+        TelasController telasController = new TelasController();
+        telasController.adcPessoas();
 
     }
 

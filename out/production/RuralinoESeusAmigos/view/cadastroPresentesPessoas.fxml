@@ -14,42 +14,42 @@
                 <Font name="Ink Free" size="36.0" />
             </font>
         </Label>
-        <Label layoutX="91.0" layoutY="87.0" text="Participantes" textFill="#ff8000">
+        <Label layoutX="63.0" layoutY="77.0" text="Participantes:" textFill="#ff8000">
             <font>
-                <Font name="Malgun Gothic Semilight" size="20.0" />
+                <Font name="Ink Free" size="24.0" />
             </font>
         </Label>
-        <ChoiceBox fx:id="selecionarPessoa" layoutX="210.0" layoutY="86.0" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: #ff8000;" />
-        <Button fx:id="salvaPessoaPresente" alignment="CENTER" layoutX="377.0" layoutY="456.0" mnemonicParsing="false" onAction="#saveButton" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #FF8000;" text="Salvar" textAlignment="CENTER" textFill="#083669">
+        <ChoiceBox fx:id="selecionarPessoa" layoutX="210.0" layoutY="86.0" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: #7294ba;" />
+        <Button fx:id="salvaPessoaPresente" alignment="CENTER" layoutX="377.0" layoutY="456.0" mnemonicParsing="false" onAction="#saveButton" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #083669; -fx-border-color: #7294ba;" text="Salvar" textAlignment="CENTER" textFill="#ff8000">
             <font>
                 <Font name="Malgun Gothic Semilight" size="14.0" />
             </font>
         </Button>
         <ListView fx:id="tableListTodosPresentes" layoutX="14.0" layoutY="207.0" prefHeight="200.0" prefWidth="250.0" />
         <ListView fx:id="tableListPresentesParticipantes" layoutX="335.0" layoutY="207.0" prefHeight="200.0" prefWidth="250.0" />
-        <Button fx:id="cancelarEscolhaPresente" alignment="CENTER" layoutX="485.0" layoutY="456.0" mnemonicParsing="false" onAction="#cancelButton" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #FF8000;" text="Cancelar" textAlignment="CENTER" textFill="#083669">
+        <Button fx:id="cancelarEscolhaPresente" alignment="CENTER" layoutX="485.0" layoutY="456.0" mnemonicParsing="false" onAction="#cancelButton" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #083669; -fx-border-color: #7294ba;" text="Cancelar" textAlignment="CENTER" textFill="#ff8000">
             <font>
                 <Font name="Malgun Gothic Semilight" size="14.0" />
             </font>
         </Button>
-        <Button fx:id="addPresentePessoaButton" layoutX="279.0" layoutY="237.0" mnemonicParsing="false" onAction="#addPresenteDoParticipante" style="-fx-background-color: #FF8000;" text="Add">
+        <Button fx:id="addPresentePessoaButton" layoutX="279.0" layoutY="237.0" mnemonicParsing="false" onAction="#addPresenteDoParticipante" style="-fx-background-color: #083669; -fx-border-color: #7294ba;" text="Add" textFill="#ff8000">
             <font>
                 <Font name="Malgun Gothic Semilight" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="deletePessoaPresente" layoutX="271.0" layoutY="330.0" mnemonicParsing="false" onAction="#deletarPresenteDoParticipante" style="-fx-background-color: #FF8000;" text="Deletar">
+        <Button fx:id="deletePessoaPresente" layoutX="271.0" layoutY="330.0" mnemonicParsing="false" onAction="#deletarPresenteDoParticipante" style="-fx-background-color: #083669; -fx-border-color: #7294ba;" text="Deletar" textFill="#ff8000">
             <font>
                 <Font name="Malgun Gothic Semilight" size="13.0" />
             </font>
         </Button>
-        <Label alignment="CENTER" layoutX="335.0" layoutY="178.0" prefHeight="29.0" prefWidth="224.0" text="Presentes do Participante" textAlignment="CENTER" textFill="#ff8000">
+        <Label layoutX="335.0" layoutY="168.0" prefHeight="39.0" prefWidth="265.0" text="Presentes do Participante" textAlignment="CENTER" textFill="#ff8000">
             <font>
-                <Font name="Malgun Gothic Semilight" size="20.0" />
+                <Font name="Ink Free" size="22.0" />
             </font>
         </Label>
-        <Label layoutX="14.0" layoutY="178.0" text="Presentes" textFill="#ff8000">
+        <Label alignment="CENTER" layoutX="14.0" layoutY="168.0" text="Presentes" textFill="#ff8000">
             <font>
-                <Font name="Malgun Gothic Semilight" size="20.0" />
+                <Font name="Ink Free" size="24.0" />
             </font>
         </Label>
     </children>
