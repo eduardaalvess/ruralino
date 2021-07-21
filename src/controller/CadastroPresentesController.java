@@ -1,5 +1,7 @@
 package controller;
 
+import DAO.PresenteDAO;
+import dados.ConnectionFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -8,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 public class CadastroPresentesController {
 
@@ -36,6 +39,30 @@ public class CadastroPresentesController {
 
     @FXML
     void saveButton(ActionEvent event) {
+
+        String categoria = categoriaField.getText();
+        String descricao = descricaoField.getText();
+        String preco = precoField.getText();
+
+        if(categoria.isEmpty() || descricao.isEmpty() || preco.isEmpty()) {
+
+            System.out.println("Erro ao salvar informações");
+
+        } else {
+            validarPresente();
+        }
+    }
+
+    public void validarPresente() {
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        Connection connection = connectionFactory.getConnection();
+        PresenteDAO presenteDAO = new PresenteDAO();
+
+        if(presenteDAO.create(categoriaField.getText(), descricaoField.getText(), precoField.getText())) {
+
+            System.out.println("Informações salvas com sucesso!");
+
+        }
 
     }
 

@@ -45,12 +45,4 @@ public class Presente {
         this.preco = preco;
     }
 
-    public void cadastrarPresente(Presente presente) {
-
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.getConnection();
-        PresenteDAO presenteDAO = new PresenteDAO();
-        presenteDAO.create(categoria, descricao, preco);
-
-    }
 }

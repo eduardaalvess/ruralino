@@ -13,7 +13,7 @@ public class PresenteDAO {
 
     public PresenteDAO() {
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.getConnection();
+        connection = connectionFactory.getConnection();
     }
 
     public boolean create(String categoria, String descricao, String preco) {
@@ -31,7 +31,7 @@ public class PresenteDAO {
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setHeaderText(null);
-            alert.setContentText("Informações salvas com sucesso! Clique em OK e volte para fazer login");
+            alert.setContentText("Presente salvo com Sucesso!");
             alert.showAndWait();
 
         } catch (SQLException ex) {

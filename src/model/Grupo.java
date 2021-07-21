@@ -9,6 +9,15 @@ public class Grupo {
     private Date dataSorteio;
     private ArrayList<Amigo> amigos = new ArrayList<Amigo>();
 
+    public Grupo() {
+
+    }
+
+    public Grupo(String nomeDoGrupo, Date dataSorteio){
+        this.nomeDoGrupo = nomeDoGrupo;
+        this.dataSorteio = dataSorteio;
+    }
+
     public String getNomeDoGrupo() {
         return nomeDoGrupo;
     }

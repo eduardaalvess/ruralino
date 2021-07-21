@@ -60,14 +60,9 @@ public class CadastroPessoasController {
 
             validarCadastro();
 
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setContentText("Informações salvas com sucesso!");
-            alert.showAndWait();
         }
         else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Não foi possivel salvar as informações");
-            alert.showAndWait();
+            System.out.println("Erro ao salvar informações");
         }
 
     }
@@ -82,7 +77,12 @@ public class CadastroPessoasController {
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setContentText("Informações Salvas com Sucesso!");
+            alert.showAndWait();
 
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Não foi possivel salvar as informações");
+            alert.showAndWait();
         }
 
     }
