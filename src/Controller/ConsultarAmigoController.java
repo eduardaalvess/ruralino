@@ -1,0 +1,64 @@
+package Controller;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.PasswordField;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
+import java.io.IOException;
+
+public class ConsultarAmigoController {
+
+    @FXML
+    private ComboBox<?> selecioneGrupo;
+
+    @FXML
+    private PasswordField senhaParticipante;
+
+    @FXML
+    private Button consulteAmigoButton;
+
+    @FXML
+    private ComboBox<?> selecioneParticipante;
+
+    @FXML
+    private Button cancelar;
+
+    @FXML
+    void consultarAmigoSecreto(ActionEvent event) {
+
+    }
+
+    @FXML
+    void selecionarGrupo(ActionEvent event) {
+
+    }
+
+    @FXML
+    void selecionarParticipante(ActionEvent event) {
+
+    }
+
+    @FXML
+    void voltarInicio(ActionEvent event) throws IOException {
+
+        Stage closeStage = (Stage) cancelar.getScene().getWindow();
+        closeStage.close();
+
+        Stage cancelar = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("../View/inicio.fxml"));
+        cancelar.setTitle("Ruralino E Seus Amigos");
+        cancelar.setScene(new Scene(root, 700, 500));
+        cancelar.setResizable(false);
+        cancelar.initStyle(StageStyle.TRANSPARENT);
+        cancelar.show();
+    }
+
+}
+

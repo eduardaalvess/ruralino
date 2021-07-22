@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="inicioPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #557571;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.InicioController">
+   <left>
+      <VBox prefHeight="500.0" prefWidth="300.0" style="-fx-background-color: #D49A89;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="amigosButton" mnemonicParsing="false" onAction="#amigosScene" prefWidth="150.0" style="-fx-background-color: #F7D1BA;" text="Amigos">
+               <font>
+                  <Font name="Calibri Light" size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="120.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="gruposButton" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#gruposScene" prefWidth="200.0" style="-fx-background-color: #F7D1BA;" text="Grupos">
+               <font>
+                  <Font name="Calibri Light" size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="presentesButton" layoutX="10.0" layoutY="206.0" mnemonicParsing="false" onAction="#presentesScene" prefWidth="250.0" style="-fx-background-color: #F7D1BA;" text="Presentes">
+               <font>
+                  <Font name="Calibri Light" size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="sorteioButton" layoutX="10.0" layoutY="252.0" mnemonicParsing="false" onAction="#sorteioScene" prefWidth="300.0" style="-fx-background-color: #F7D1BA;" text="Sorteio">
+               <font>
+                  <Font name="Calibri Light" size="25.0" />
+               </font>
+            </Button>
+            <Button fx:id="sairButton" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#sairSistema" prefWidth="150.0" style="-fx-background-color: #F7D1BA;" text="Sair">
+               <font>
+                  <Font name="Calibri Light" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" top="80.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="119.0" layoutY="221.0" text="Bem vindo!" textFill="#f4f4f4">
+               <font>
+                  <Font name="Ink Free" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
