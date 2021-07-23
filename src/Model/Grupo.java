@@ -7,7 +7,7 @@ public class Grupo {
 
     private String nomeDoGrupo;
     private Date dataSorteio;
-    private ArrayList<Amigo> amigos = new ArrayList<Amigo>();
+    private ArrayList<Amigo> amigos;
 
     public Grupo() {
 

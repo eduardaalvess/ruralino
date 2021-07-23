@@ -1,10 +1,13 @@
 package Model;
 
+import java.util.ArrayList;
+
 public class Amigo {
 
     private String nomeCompleto;
     private String apelido;
     private String senha;
+    private ArrayList<Presente> presentes;
 
     public Amigo() {
 
@@ -14,6 +17,7 @@ public class Amigo {
         this.nomeCompleto = nomeCompleto;
         this.apelido = apelido;
         this.senha = senha;
+        presentes = new ArrayList<>();
     }
 
     public String getNomeCompleto() {
@@ -40,4 +44,11 @@ public class Amigo {
         this.senha = senha;
     }
 
+    public ArrayList<Presente> getPresentes() {
+        return presentes;
+    }
+
+    public void setPresentes(ArrayList<Presente> presentes) {
+        this.presentes = presentes;
+    }
 }
