@@ -9,6 +9,7 @@ public class JaExisteEsteApelidoException extends Exception{
 
     public JaExisteEsteApelidoException(Object object) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Apelido já existente");
         alert.setContentText("Já existe um usuário com este apelido!");
         alert.showAndWait();
 

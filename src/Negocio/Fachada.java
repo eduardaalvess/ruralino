@@ -32,7 +32,7 @@ public class Fachada {
     }
 
     public void inserirAmigo(Amigo amigo) throws JaExisteEsteApelidoException {
-        controladorAmigo.cadastrarAmigo();
+        controladorAmigo.cadastrarAmigo(amigo);
     }
 
 }

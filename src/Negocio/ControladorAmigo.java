@@ -1,10 +1,17 @@
 package Negocio;
 
+import Dados.InterfaceRepositorioAmigo;
+import Dados.RepositorioAmigo;
+import Exceptions.JaExisteEsteApelidoException;
+import Model.Amigo;
+
 public class ControladorAmigo {
 
+    private InterfaceRepositorioAmigo<Amigo> repositorioAmigo;
     private static ControladorAmigo instance;
 
     private ControladorAmigo() {
+        this.repositorioAmigo = new RepositorioAmigo<>();
     }
 
     static ControladorAmigo getInstance() {
@@ -17,8 +24,8 @@ public class ControladorAmigo {
 
     }
 
-    public void cadastrarAmigo() {
-
+    public void cadastrarAmigo(Amigo amigo) throws JaExisteEsteApelidoException {
+        repositorioAmigo.salvarAmigo(amigo);
     }
 
 

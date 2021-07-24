@@ -1,17 +1,19 @@
 package Dados;
 
+import Exceptions.JaExisteEsteApelidoException;
 import Model.Amigo;
+import Model.Presente;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class RepositorioAmigo implements InterfaceRepositorioAmigo {
+public class RepositorioAmigo<A> implements InterfaceRepositorioAmigo<A> {
 
     private List<Amigo> amigoList;
     private static RepositorioAmigo instance;
 
-    private RepositorioAmigo() {
+    public RepositorioAmigo() {
         amigoList = new ArrayList<Amigo>();
     }
 
@@ -19,14 +21,14 @@ public class RepositorioAmigo implements InterfaceRepositorioAmigo {
         return instance;
     }
 
-
     @Override
-    public void salvarAmigo(Amigo amigo) {
+    public void salvarAmigo(Amigo amigo) throws JaExisteEsteApelidoException {
 
         if (!this.amigoList.contains(amigo)) {
-            this.amigoList.add(amigo);
+            this.amigoList.add((Amigo) amigo);
+        } else {
+            throw new JaExisteEsteApelidoException(amigo);
         }
-
     }
 
     @Override
@@ -36,11 +38,21 @@ public class RepositorioAmigo implements InterfaceRepositorioAmigo {
 
     @Override
     public void remove(Amigo amigo) {
+
         if (this.amigoList.contains(amigo)) {
             this.amigoList.remove(this.amigoList.indexOf(amigo));
         }
+
     }
 
+    @Override
+    public void addPresentes(Amigo amigo, Presente presentes) {
 
+    }
+
+    @Override
+    public void removePresentes(Amigo amigo, Presente presentes) {
+
+    }
 
 }
