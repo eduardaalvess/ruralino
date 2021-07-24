@@ -11,7 +11,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../View/inicio.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXML/View/inicio.fxml"));
         primaryStage.setTitle("Ruralino E Seus Amigos");
         primaryStage.setScene(new Scene(root, 700, 500));
         primaryStage.setResizable(false);

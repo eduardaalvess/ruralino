@@ -1,4 +1,4 @@
-package Controller;
+package GUI.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,46 +13,46 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class AdicaoDePresentesController {
+public class AdicaoDeAmigoController {
 
     @FXML
-    private ComboBox<?> selecioneParticipante;
+    private ComboBox<?> selecioneGrupo;
 
     @FXML
-    private ListView<?> todosPresentesList;
+    private ListView<?> todosAmigosList;
 
     @FXML
-    private Button salvarAdicionePresente;
+    private ListView<?> amigosSelecionadosList;
+
+    @FXML
+    private Button addAmigo;
+
+    @FXML
+    private Button delAmigo;
+
+    @FXML
+    private Button salvarAdicionarAmigo;
 
     @FXML
     private Button cancelar;
 
     @FXML
-    private Button addPresente;
-
-    @FXML
-    private Button delPresente;
-
-    @FXML
-    private ListView<?> presentesEscolhidosList;
-
-    @FXML
-    void adicionarPresente(ActionEvent event) {
+    void adicionarAmigo(ActionEvent event) {
 
     }
 
     @FXML
-    void deletarPresente(ActionEvent event) {
+    void deletarAmigo(ActionEvent event) {
 
     }
 
     @FXML
-    void salvarAdicionarPresente(ActionEvent event) {
+    void salvarAdicaoDeAmigo(ActionEvent event) {
 
     }
 
     @FXML
-    void selecionarParticipante(ActionEvent event) {
+    void selecionarGrupo(ActionEvent event) {
 
     }
 
@@ -63,7 +63,7 @@ public class AdicaoDePresentesController {
         closeStage.close();
 
         Stage cancelar = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../View/inicio.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXML/View/inicio.fxml"));
         cancelar.setTitle("Ruralino E Seus Amigos");
         cancelar.setScene(new Scene(root, 700, 500));
         cancelar.setResizable(false);

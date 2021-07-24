@@ -1,4 +1,4 @@
-package Controller;
+package GUI.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -39,7 +39,7 @@ public class CadastroAmigoController {
         closeStage.close();
 
         Stage addPresentes = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../View/adicaoDePresentes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXML/View/adicaoDePresentes.fxml"));
         addPresentes.setTitle("Ruralino E Seus Amigos");
         addPresentes.setScene(new Scene(root, 700, 500));
         addPresentes.setResizable(false);

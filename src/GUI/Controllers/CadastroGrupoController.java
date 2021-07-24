@@ -1,7 +1,6 @@
-package Controller;
+package GUI.Controllers;
 
 
-import App.Scenes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -37,7 +35,7 @@ public class CadastroGrupoController {
         closeStage.close();
 
         Stage addAmigos = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../View/adicaoDeAmigo.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXML/View/adicaoDeAmigo.fxml"));
         addAmigos.setTitle("Ruralino E Seus Amigos");
         addAmigos.setScene(new Scene(root, 700, 500));
         addAmigos.setResizable(false);

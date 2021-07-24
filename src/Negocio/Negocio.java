@@ -1,4 +1,4 @@
-package Controller;
+package Negocio;
 
 public class Negocio {
 }

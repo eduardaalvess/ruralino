@@ -1,4 +1,4 @@
-package Controller;
+package GUI.Controllers;
 
 import App.Scenes;
 import javafx.event.ActionEvent;

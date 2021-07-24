@@ -1,4 +1,4 @@
-package Controller;
+package GUI.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,7 +30,7 @@ public class SorteioController {
         closeStage.close();
 
         Stage consulta = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../View/consultarAmigo.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXML/View/consultarAmigo.fxml"));
         consulta.setTitle("Ruralino E Seus Amigos");
         consulta.setScene(new Scene(root, 700, 500));
         consulta.setResizable(false);

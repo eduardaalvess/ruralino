@@ -13,7 +13,7 @@ public class Scenes {
     public Pane getPage(String fileName) {
 
         try {
-            URL fileUrl = Main.class.getResource("/View/" + fileName + ".fxml");
+            URL fileUrl = Main.class.getResource("/GUI/FXML/View/" + fileName + ".fxml");
 
             if(fileUrl == null) {
                 throw new java.io.FileNotFoundException("Arquivo não encontrado!");

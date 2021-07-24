@@ -1,4 +1,4 @@
-package Controller;
+package GUI.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,52 +7,41 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
+import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class AdicaoDeAmigoController {
+public class ConsultarAmigoController {
 
     @FXML
     private ComboBox<?> selecioneGrupo;
 
     @FXML
-    private ListView<?> todosAmigosList;
+    private PasswordField senhaParticipante;
 
     @FXML
-    private ListView<?> amigosSelecionadosList;
+    private Button consulteAmigoButton;
 
     @FXML
-    private Button addAmigo;
-
-    @FXML
-    private Button delAmigo;
-
-    @FXML
-    private Button salvarAdicionarAmigo;
+    private ComboBox<?> selecioneParticipante;
 
     @FXML
     private Button cancelar;
 
     @FXML
-    void adicionarAmigo(ActionEvent event) {
-
-    }
-
-    @FXML
-    void deletarAmigo(ActionEvent event) {
-
-    }
-
-    @FXML
-    void salvarAdicaoDeAmigo(ActionEvent event) {
+    void consultarAmigoSecreto(ActionEvent event) {
 
     }
 
     @FXML
     void selecionarGrupo(ActionEvent event) {
+
+    }
+
+    @FXML
+    void selecionarParticipante(ActionEvent event) {
 
     }
 
@@ -63,13 +52,12 @@ public class AdicaoDeAmigoController {
         closeStage.close();
 
         Stage cancelar = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../View/inicio.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXML/View/inicio.fxml"));
         cancelar.setTitle("Ruralino E Seus Amigos");
         cancelar.setScene(new Scene(root, 700, 500));
         cancelar.setResizable(false);
         cancelar.initStyle(StageStyle.TRANSPARENT);
         cancelar.show();
-
     }
 
 }
