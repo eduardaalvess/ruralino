@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #557571;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CadastroGrupoController">
+<AnchorPane prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #557571;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.CadastroGrupoController">
     <children>
         <Label layoutX="99.0" layoutY="14.0" text="Cadastro de Grupos" textFill="#f4f4f4">
             <font>

@@ -1,5 +1,8 @@
 package GUI.Controllers;
 
+import Exceptions.JaExisteEsteApelidoException;
+import Model.Amigo;
+import Negocio.Fachada;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,7 +42,7 @@ public class CadastroAmigoController {
         closeStage.close();
 
         Stage addPresentes = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXML/View/adicaoDePresentes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/View/adicaoDePresentes.fxml"));
         addPresentes.setTitle("Ruralino E Seus Amigos");
         addPresentes.setScene(new Scene(root, 700, 500));
         addPresentes.setResizable(false);
@@ -51,6 +54,20 @@ public class CadastroAmigoController {
     @FXML
     void salvarAdicaoDeAmigo(ActionEvent event) {
 
+        Amigo amg = new Amigo(this.cadastroNome.getText(), this.cadastroApelido.getText(), this.cadastroSenha.getText());
+
+        try {
+            Fachada.getInstance().inserirAmigo(amg);
+        } catch (JaExisteEsteApelidoException apelidoException) {
+
+        }
+
+    }
+
+    public void clean() {
+        this.cadastroNome.setText("");
+        this.cadastroApelido.setText("");
+        this.cadastroSenha.setText("");
     }
 
 }

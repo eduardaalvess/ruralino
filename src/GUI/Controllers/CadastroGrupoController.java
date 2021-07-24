@@ -35,7 +35,7 @@ public class CadastroGrupoController {
         closeStage.close();
 
         Stage addAmigos = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXML/View/adicaoDeAmigo.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/View/adicaoDeAmigo.fxml"));
         addAmigos.setTitle("Ruralino E Seus Amigos");
         addAmigos.setScene(new Scene(root, 700, 500));
         addAmigos.setResizable(false);

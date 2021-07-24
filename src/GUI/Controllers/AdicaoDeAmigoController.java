@@ -63,7 +63,7 @@ public class AdicaoDeAmigoController {
         closeStage.close();
 
         Stage cancelar = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXML/View/inicio.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXML/View/inicio.fxml"));
         cancelar.setTitle("Ruralino E Seus Amigos");
         cancelar.setScene(new Scene(root, 700, 500));
         cancelar.setResizable(false);

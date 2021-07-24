@@ -1,5 +1,6 @@
 package Negocio;
 
+import Exceptions.JaExisteEsteApelidoException;
 import Model.Amigo;
 
 public class Fachada {
@@ -28,6 +29,10 @@ public class Fachada {
 
         return instance;
 
+    }
+
+    public void inserirAmigo(Amigo amigo) throws JaExisteEsteApelidoException {
+        controladorAmigo.cadastrarAmigo();
     }
 
 }
