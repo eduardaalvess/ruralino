@@ -2,6 +2,8 @@ package Negocio;
 
 import Model.Amigo;
 
+import java.util.List;
+
 public class ControladorAmigo {
 
     private static ControladorAmigo instance;
@@ -19,7 +21,13 @@ public class ControladorAmigo {
 
     }
 
-    public void cadastrarAmigo(Amigo object) {
+    public void cadastrarAmigo() {
+
+    } {
+
+    }
+
+    public List<Amigo> list() {
 
     }
 

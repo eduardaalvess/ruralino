@@ -12,4 +12,19 @@ public class RepositorioAmigo implements InterfaceRepositorioAmigo {
     public static RepositorioAmigo getInstance() {
         return instance;
     }
+
+    Override
+    public boolean salvarAmigo(Amigo amigo) {
+
+        try {
+            amigoList.add(amigo);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            return false;
+        }
+
+        return true;
+
+    }
+
 }
