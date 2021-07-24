@@ -1,5 +1,7 @@
 package Negocio;
 
+import Model.Amigo;
+
 public class ControladorAmigo {
 
     private static ControladorAmigo instance;
@@ -14,6 +16,10 @@ public class ControladorAmigo {
         }
 
         return instance;
+
+    }
+
+    public void cadastrarAmigo(Amigo object) {
 
     }
 

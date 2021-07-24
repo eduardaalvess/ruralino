@@ -1,5 +1,7 @@
 package Negocio;
 
+import Model.Presente;
+
 public class ControladorPresentes {
 
     private static ControladorPresentes instance;
@@ -15,6 +17,10 @@ public class ControladorPresentes {
         }
 
         return instance;
+
+    }
+
+    public void salvarPresente(Presente object) {
 
     }
 
