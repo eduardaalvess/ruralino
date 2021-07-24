@@ -1,5 +1,12 @@
 package GUI.Controllers;
 
+import Model.Amigo;
+import Model.Grupo;
+import Negocio.ControladorAmigo;
+import Negocio.ControladorGrupo;
+import Negocio.Fachada;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,13 +23,13 @@ import java.io.IOException;
 public class AdicaoDeAmigoController {
 
     @FXML
-    private ComboBox<?> selecioneGrupo;
+    private ComboBox<Grupo> selecioneGrupo;
 
     @FXML
-    private ListView<?> todosAmigosList;
+    private ListView<Amigo> todosAmigosList;
 
     @FXML
-    private ListView<?> amigosSelecionadosList;
+    private ListView<Amigo> amigosSelecionadosList;
 
     @FXML
     private Button addAmigo;
@@ -36,8 +43,20 @@ public class AdicaoDeAmigoController {
     @FXML
     private Button cancelar;
 
+    ControladorAmigo controladorAmigo = ControladorAmigo.getInstance();
+    ControladorGrupo controladorGrupo = ControladorGrupo.getInstance();
+
+    private ObservableList<Amigo> observableListTodosAmigos = FXCollections.observableArrayList(controladorAmigo.list());
+
+    private ObservableList<Amigo> observableListSelecionados;
+
+    private ObservableList<Grupo> observableListGrupo = FXCollections.observableArrayList(controladorGrupo.listGrupo());
+
     @FXML
     void adicionarAmigo(ActionEvent event) {
+
+        Amigo amg = todosAmigosList.getSelectionModel().getSelectedItem();
+        Grupo gp = selecioneGrupo.getSelectionModel().getSelectedItem();
 
     }
 

@@ -47,6 +47,13 @@ public class CadastroGrupoController {
     @FXML
     void salvarCadastroDoGrupo(ActionEvent event) {
 
+
+
+    }
+
+    public void clean() {
+        this.cadastroNomeGrupo.setText("");
+        this.dataSorteio.setValue(null);
     }
 
 
