@@ -1,5 +1,12 @@
 package Model;
 
+import javafx.beans.property.StringProperty;
+import javafx.collections.ObservableList;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class Amigo {
@@ -30,6 +37,28 @@ public class Amigo {
         this.senha = senha;
         presentes = new ArrayList<>();
     }
+
+    /**
+
+    private StringProperty nomes;
+
+    public Amigo(StringProperty nomes) {
+        this.nomes = nomes;
+    }
+
+    public String getNomes() {
+        return nomes.get();
+    }
+
+     public void setNomes(String nomes) {
+     this.nomes.set(nomes);
+     }
+
+    public StringProperty nomesProperty() {
+        return nomes;
+    }
+
+     **/
 
     public String getNome() {
         return nome;

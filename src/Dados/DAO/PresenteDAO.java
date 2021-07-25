@@ -1,6 +1,7 @@
 package Dados.DAO;
 
 import Dados.ConnectionFactory;
+import Model.Presente;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -8,16 +9,29 @@ import javafx.scene.image.ImageView;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-public class PresenteDAO {
+public class PresenteDAO implements InterfacePresenteDAO {
 
     private Connection connection;
+    private static PresenteDAO instance;
+    private List<Presente> listaPresentes;
 
     public PresenteDAO() {
 
         ConnectionFactory connectionFactory = new ConnectionFactory();
         connection = connectionFactory.getConnection();
+        listaPresentes = new ArrayList<Presente>();
 
+    }
+
+    public static PresenteDAO getInstance() {
+        if(instance == null) {
+            instance = new PresenteDAO();
+        }
+
+        return instance;
     }
 
     public boolean create(String categoria, String descricao, String preco) {
@@ -53,4 +67,8 @@ public class PresenteDAO {
 
     }
 
+    @Override
+    public List<Presente> listPresente() {
+        return listaPresentes;
+    }
 }

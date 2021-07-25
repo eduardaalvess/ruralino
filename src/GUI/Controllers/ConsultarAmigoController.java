@@ -1,8 +1,15 @@
 package GUI.Controllers;
 
+import Dados.ConnectionFactory;
+import Dados.DAO.AmigosDAO;
+import Dados.DAO.GrupoDAO;
+import Model.Amigo;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,11 +19,17 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.util.ResourceBundle;
 
-public class ConsultarAmigoController {
+public class ConsultarAmigoController implements Initializable {
+
+    private Connection connection;
 
     @FXML
-    private ComboBox<?> selecioneGrupo;
+    private ComboBox<String> selecioneGrupo;
+    ObservableList<String> Grupos;
 
     @FXML
     private PasswordField senhaParticipante;
@@ -25,7 +38,8 @@ public class ConsultarAmigoController {
     private Button consulteAmigoButton;
 
     @FXML
-    private ComboBox<?> selecioneParticipante;
+    private ComboBox<String> selecioneParticipante;
+    ObservableList<String> Nomes;
 
     @FXML
     private Button cancelar;
@@ -60,5 +74,18 @@ public class ConsultarAmigoController {
         cancelar.show();
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        Nomes = FXCollections.observableArrayList();
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        connection = connectionFactory.getConnection();
+        AmigosDAO.getNomes(connection, Nomes);
+        selecioneParticipante.setItems(Nomes);
+
+        Grupos = FXCollections.observableArrayList();
+        GrupoDAO.getGrupos(connection, Grupos);
+        selecioneGrupo.setItems(Grupos);
+    }
 }
 

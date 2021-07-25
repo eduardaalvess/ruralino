@@ -1,26 +1,37 @@
 package Dados.DAO;
 
 import Dados.ConnectionFactory;
+import Model.Grupo;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-public class GrupoDAO {
+public class GrupoDAO implements InterfaceGrupoDAO {
 
     private Connection connection;
+    private static GrupoDAO instance;
+    private List<Grupo> listaGrupo;
 
     public GrupoDAO() {
 
         ConnectionFactory connectionFactory = new ConnectionFactory();
         connection = connectionFactory.getConnection();
+        listaGrupo = new ArrayList<Grupo>();
 
+    }
+
+    public static GrupoDAO getInstance() {
+        if (instance == null) {
+            instance = new GrupoDAO();
+        }
+
+        return instance;
     }
 
     public boolean create(String nome, LocalDate data) {
@@ -54,5 +65,32 @@ public class GrupoDAO {
 
         return false;
 
+    }
+
+    public static void getGrupos(Connection connection, ObservableList<String> Grupos) {
+
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(
+                    "SELECT nome FROM amigosecreto.grupo"
+            );
+            while (resultSet.next()) {
+                Grupos.add(
+                        new String(
+                                resultSet.getString("nome")
+                        )
+                );
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+            sqlException.getCause();
+        }
+
+    }
+
+
+    @Override
+    public List<Grupo> listGrupo() {
+        return listaGrupo;
     }
 }
