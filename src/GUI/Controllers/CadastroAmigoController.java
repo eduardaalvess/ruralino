@@ -1,5 +1,7 @@
 package GUI.Controllers;
 
+import Dados.ConnectionFactory;
+import Dados.DAO.AmigosDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +14,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 public class CadastroAmigoController {
 
@@ -50,6 +53,34 @@ public class CadastroAmigoController {
 
     @FXML
     void salvarAdicaoDeAmigo(ActionEvent event) {
+
+        String nome = cadastroNome.getText();
+        String apelido = cadastroApelido.getText();
+        String senha = cadastroSenha.getText();
+
+        if(nome != null && nome.length() > 0 && apelido != null && apelido.length() > 0 && senha != null && senha.length() > 0) {
+
+            validarCadastroAmigo();
+            clean();
+
+        }
+        else {
+            System.out.println("Erro ao salvar informações");
+        }
+
+    }
+
+    public void validarCadastroAmigo() {
+
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        Connection connection = connectionFactory.getConnection();
+        AmigosDAO amigoDAO = new AmigosDAO();
+
+        if(amigoDAO.create(cadastroNome.getText(), cadastroApelido.getText(), cadastroSenha.getText())) {
+
+            System.out.println("Informações salvas com sucesso");
+
+        }
 
     }
 
