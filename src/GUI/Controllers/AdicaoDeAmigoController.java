@@ -4,7 +4,6 @@ import Model.Amigo;
 import Model.Grupo;
 import Negocio.ControladorAmigo;
 import Negocio.ControladorGrupo;
-import Negocio.Fachada;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

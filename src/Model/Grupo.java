@@ -1,9 +1,5 @@
 package Model;
 
-import javafx.scene.control.Alert;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -55,14 +51,13 @@ public class Grupo {
     }
 
     public void listAmigos() {
-        for (int i = 0; i < getAmigos().size(); i++) {
-            System.out.println(getAmigos().get(i).getApelido());
-        }
+
     }
 
     public void consultarAmigo() {
-        for (int i = 0; i < getAmigos().size(); i++) {
-            if (i + 1 == getAmigos().size()) {
+
+        /**
+
 
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Amigo Secreto");
@@ -70,12 +65,11 @@ public class Grupo {
                 image.setFitHeight(48);
                 image.setFitWidth(48);
                 alert.getDialogPane().setGraphic(image);
-                alert.setContentText("O amigo secreto de " + getAmigos().get(i).getApelido() + " é " + getAmigos().get(0).getApelido() + "!" );
+                alert.setContentText(" ");
                 alert.showAndWait();
 
-                System.out.println( getAmigos().get(i).getApelido() + " é amigo secreto de " + getAmigos().get(0).getApelido() );
-            }
-        }
-    }
+         **/
 
+    }
 }
+
