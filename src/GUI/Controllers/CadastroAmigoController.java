@@ -7,9 +7,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -58,14 +61,25 @@ public class CadastroAmigoController {
         String apelido = cadastroApelido.getText();
         String senha = cadastroSenha.getText();
 
+        if (nome.isEmpty() || apelido.isEmpty() || senha.isEmpty()) {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Campos inválidos");
+            alert.setContentText("Por favor, preencha todos os campos corretamente");
+            ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/sign-error-icon.png"))));
+            image.setFitHeight(45);
+            image.setFitWidth(45);
+            alert.getDialogPane().setGraphic(image);
+            alert.showAndWait();
+
+           // System.out.println("Erro ao salvar informações");
+        }
+
         if(nome != null && nome.length() > 0 && apelido != null && apelido.length() > 0 && senha != null && senha.length() > 0) {
 
             validarCadastroAmigo();
             clean();
 
-        }
-        else {
-            System.out.println("Erro ao salvar informações");
         }
 
     }
