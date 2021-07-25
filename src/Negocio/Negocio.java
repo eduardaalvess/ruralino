@@ -36,7 +36,7 @@ public class Negocio {
 
     public void addAmigo(Amigo amigo, Grupo grupo) {
         if(amigo != null && grupo != null && !grupo.getAmigos().contains(amigo)) {
-
+            grupo.addAmigo(amigo);
         }
     }
 
