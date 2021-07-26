@@ -28,7 +28,6 @@ import java.util.ResourceBundle;
 public class AdicaoDePresentesController implements Initializable {
 
     private Connection connection;
-    Negocio negocio = Negocio.getInstance();
 
     @FXML
     private ComboBox<String> selecioneParticipante;
@@ -51,7 +50,7 @@ public class AdicaoDePresentesController implements Initializable {
     private Button delPresente;
 
     @FXML
-    private ListView<?> presentesEscolhidosList;
+    private ListView<String> presentesEscolhidosList;
 
     @FXML
     void adicionarPresente(ActionEvent event) {

@@ -3,8 +3,6 @@ package GUI.Controllers;
 import Dados.ConnectionFactory;
 import Dados.DAO.AmigosDAO;
 import Dados.DAO.GrupoDAO;
-import Model.Amigo;
-import Model.Grupo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,7 +20,6 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AdicaoDeAmigoController implements Initializable {

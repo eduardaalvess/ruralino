@@ -72,7 +72,6 @@ public class CadastroAmigoController {
             alert.getDialogPane().setGraphic(image);
             alert.showAndWait();
 
-           // System.out.println("Erro ao salvar informações");
         }
 
         if(nome != null && nome.length() > 0 && apelido != null && apelido.length() > 0 && senha != null && senha.length() > 0) {

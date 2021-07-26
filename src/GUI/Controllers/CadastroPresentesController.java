@@ -56,8 +56,16 @@ public class CadastroPresentesController {
 
             }
 
+           clean();
+
         }
 
+    }
+
+    public void clean() {
+        this.categoriaPresentes.setText("");
+        this.precoPresentes.setText("");
+        this.descricaoPresentes.setText("");
     }
 
 }

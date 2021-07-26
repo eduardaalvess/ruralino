@@ -1,5 +1,9 @@
 package Model;
 
+import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -59,42 +63,6 @@ public class Grupo {
 
     public void removeAmigo(Amigo amigo) {
         this.amigos.remove(amigo);
-    }
-
-    public void listAmigos() {
-
-        for (int i = 0; i < getAmigos().size(); i++) {
-            System.out.println(getAmigos().get(i).getNome());
-        }
-
-    }
-
-    public void consultarAmigo() {
-
-        /**
-
-
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Amigo Secreto");
-                ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/confirmacao-icon.png"))));
-                image.setFitHeight(48);
-                image.setFitWidth(48);
-                alert.getDialogPane().setGraphic(image);
-                alert.setContentText(" ");
-                alert.showAndWait();
-
-         **/
-
-    }
-
-    public void listAmigoSecreto() {
-        for(int i = 0; i < getAmigos().size(); i++) {
-            if(i + 1 == getAmigos().size()) {
-                System.out.println(getAmigos().get(i).getNome() + "tirou" + getAmigos().get(0).getNome());
-            } else {
-                System.out.println(getAmigos().get(i).getNome() + "tirou" + getAmigos().get(i + 1).getNome());
-            }
-        }
     }
 }
 

@@ -82,8 +82,8 @@ public class Negocio {
             Collections.shuffle(grupo.getAmigos());
             grupo.setSorteados(true);
             InterfaceGrupoDAO.changeGrupo(grupo);
-            grupo.listAmigos();
-            grupo.listAmigoSecreto();
+            // grupo.listAmigos();
+            // grupo.listAmigoSecreto();
 
         }
     }

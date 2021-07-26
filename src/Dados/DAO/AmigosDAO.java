@@ -2,7 +2,6 @@ package Dados.DAO;
 
 import Dados.ConnectionFactory;
 import Model.Amigo;
-import com.mysql.cj.exceptions.ConnectionIsClosedException;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
@@ -65,40 +64,6 @@ public class AmigosDAO implements InterfaceAmigosDAO {
         return false;
     }
 
-    /**
-
-    public List<Amigo> amigoList() {
-
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-
-        List<Amigo> amg = new ArrayList<Amigo>();
-
-        try{
-
-        statement = con.prepareStatement("SELECT nome FROM amigosecreto.amigos");
-        resultSet = statement.executeQuery();
-        
-        while(resultSet.next()) {
-            Amigo amigo = new Amigo();
-            amigo.setNome(resultSet.getString("nome"));
-            
-            amg.add(amigo);
-        }
-    } catch (SQLException sqlException) {
-            sqlException.printStackTrace();
-        } finally {
-            ConnectionFactory.closeConnection(con, statement, resultSet);
-        }
-
-        return amg;
-
-    }
-
-     **/
-
-
-
     public static void getNomes(Connection connection, ObservableList<String> Nomes) {
 
         try {
@@ -118,7 +83,6 @@ public class AmigosDAO implements InterfaceAmigosDAO {
         }
 
     }
-
 
     @Override
     public List<Amigo> listAmigos() {
