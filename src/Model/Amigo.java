@@ -1,12 +1,5 @@
 package Model;
 
-import javafx.beans.property.StringProperty;
-import javafx.collections.ObservableList;
-
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 public class Amigo {
@@ -92,13 +85,18 @@ public class Amigo {
         this.presentes = presentes;
     }
 
+    /**
+
     @Override
     public boolean equals(Object object) {
         return false;
     }
 
+     **/
+
     @Override
     public String toString() {
-        return String.format("Nome: %s\nApelido: %s\nPresentes: %s\n", this.nome, this.apelido, this.presentes);
+       // return String.format("Nome: %s\nApelido: %s", this.nome, this.apelido);
+       return this.nome;
     }
 }

@@ -2,13 +2,12 @@ package Dados.DAO;
 
 import Dados.ConnectionFactory;
 import Model.Presente;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,6 +63,27 @@ public class PresenteDAO implements InterfacePresenteDAO {
         }
 
         return false;
+
+    }
+
+    public static void getPresentes(Connection connection, ObservableList<String> Nomes) {
+
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(
+                    "SELECT descricao FROM amigosecreto.presente"
+            );
+            while (resultSet.next()) {
+                Nomes.add(
+                        new String(
+                               resultSet.getString("descricao")
+                        )
+                );
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+            sqlException.getCause();
+        }
 
     }
 

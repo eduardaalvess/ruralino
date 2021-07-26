@@ -22,6 +22,7 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AdicaoDeAmigoController implements Initializable {
@@ -37,7 +38,7 @@ public class AdicaoDeAmigoController implements Initializable {
     ObservableList<String> Nomes;
 
     @FXML
-    private ListView<Amigo> amigosSelecionadosList;
+    private ListView<String> amigosSelecionadosList;
 
     @FXML
     private Button addAmigo;

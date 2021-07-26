@@ -1,19 +1,22 @@
 package Model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Grupo {
 
     private String nomeDoGrupo;
-    private Date dataSorteio;
+    private LocalDate dataSorteio;
     private ArrayList<Amigo> amigos;
+    private boolean sorteados;
+
+
 
     public Grupo() {
 
     }
 
-    public Grupo(String nomeDoGrupo, Date dataSorteio){
+    public Grupo(String nomeDoGrupo, LocalDate dataSorteio){
         this.nomeDoGrupo = nomeDoGrupo;
         this.dataSorteio = dataSorteio;
     }
@@ -26,12 +29,20 @@ public class Grupo {
         this.nomeDoGrupo = nomeDoGrupo;
     }
 
-    public Date getDataSorteio() {
+    public LocalDate getDataSorteio() {
         return dataSorteio;
     }
 
-    public void setDataSorteio(Date dataSorteio) {
+    public void setDataSorteio(LocalDate dataSorteio) {
         this.dataSorteio = dataSorteio;
+    }
+
+    public boolean isSorteados() {
+        return sorteados;
+    }
+
+    public void setSorteados(boolean sorteados) {
+        this.sorteados = sorteados;
     }
 
     public ArrayList<Amigo> getAmigos() {
@@ -52,6 +63,10 @@ public class Grupo {
 
     public void listAmigos() {
 
+        for (int i = 0; i < getAmigos().size(); i++) {
+            System.out.println(getAmigos().get(i).getNome());
+        }
+
     }
 
     public void consultarAmigo() {
@@ -70,6 +85,16 @@ public class Grupo {
 
          **/
 
+    }
+
+    public void listAmigoSecreto() {
+        for(int i = 0; i < getAmigos().size(); i++) {
+            if(i + 1 == getAmigos().size()) {
+                System.out.println(getAmigos().get(i).getNome() + "tirou" + getAmigos().get(0).getNome());
+            } else {
+                System.out.println(getAmigos().get(i).getNome() + "tirou" + getAmigos().get(i + 1).getNome());
+            }
+        }
     }
 }
 

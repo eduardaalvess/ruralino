@@ -2,6 +2,10 @@ package GUI.Controllers;
 
 import Dados.ConnectionFactory;
 import Dados.DAO.AmigosDAO;
+import Dados.DAO.PresenteDAO;
+import Model.Amigo;
+import Model.Presente;
+import Negocio.Negocio;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,13 +28,15 @@ import java.util.ResourceBundle;
 public class AdicaoDePresentesController implements Initializable {
 
     private Connection connection;
+    Negocio negocio = Negocio.getInstance();
 
     @FXML
     private ComboBox<String> selecioneParticipante;
     ObservableList<String> Nomes;
 
     @FXML
-    private ListView<?> todosPresentesList;
+    private ListView<String> todosPresentesList;
+    ObservableList<String> Presentes;
 
     @FXML
     private Button salvarAdicionePresente;
@@ -90,6 +96,10 @@ public class AdicaoDePresentesController implements Initializable {
         connection = connectionFactory.getConnection();
         AmigosDAO.getNomes(connection, Nomes);
         selecioneParticipante.setItems(Nomes);
+
+        Presentes = FXCollections.observableArrayList();
+        PresenteDAO.getPresentes(connection, Presentes);
+        todosPresentesList.setItems(Presentes);
     }
 }
 

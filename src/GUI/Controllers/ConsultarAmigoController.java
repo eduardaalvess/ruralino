@@ -4,6 +4,7 @@ import Dados.ConnectionFactory;
 import Dados.DAO.AmigosDAO;
 import Dados.DAO.GrupoDAO;
 import Model.Amigo;
+import Model.Grupo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -38,7 +39,7 @@ public class ConsultarAmigoController implements Initializable {
     private Button consulteAmigoButton;
 
     @FXML
-    private ComboBox<String> selecioneParticipante;
+        private ComboBox<String> selecioneParticipante;
     ObservableList<String> Nomes;
 
     @FXML
