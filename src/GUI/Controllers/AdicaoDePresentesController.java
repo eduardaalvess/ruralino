@@ -1,8 +1,13 @@
 package GUI.Controllers;
 
+import Dados.ConnectionFactory;
+import Dados.DAO.AmigosDAO;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,11 +17,17 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.util.ResourceBundle;
 
-public class AdicaoDePresentesController {
+public class AdicaoDePresentesController implements Initializable {
+
+    private Connection connection;
 
     @FXML
-    private ComboBox<?> selecioneParticipante;
+    private ComboBox<String> selecioneParticipante;
+    ObservableList<String> Nomes;
 
     @FXML
     private ListView<?> todosPresentesList;
@@ -72,5 +83,13 @@ public class AdicaoDePresentesController {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Nomes = FXCollections.observableArrayList();
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        connection = connectionFactory.getConnection();
+        AmigosDAO.getNomes(connection, Nomes);
+        selecioneParticipante.setItems(Nomes);
+    }
 }
 
