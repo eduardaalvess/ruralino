@@ -4,8 +4,8 @@ import Model.Amigo;
 import Model.Grupo;
 
 import Negocio.Fachada;
-import Negocio.Negocio;
 
+import Negocio.Negocio;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -34,15 +34,15 @@ public class AdicaoDeAmigoController implements Initializable {
 
     @FXML
     private ComboBox<Grupo> selecioneGrupo;
-    ObservableList<Grupo> grupoObservableList = FXCollections.observableList(f.listGrupos());
+    ObservableList<Grupo> grupoObservableList = FXCollections.observableArrayList(f.listGrupos());
 
     @FXML
     private ListView<Amigo> todosAmigosList;
-    ObservableList<Amigo> amigoObservableList = FXCollections.observableList(f.listAmigos());
+    ObservableList<Amigo> amigoObservableList = FXCollections.observableArrayList(f.listAmigos());
 
     @FXML
     private ListView<Amigo> amigosSelecionadosList;
-    ObservableList<Amigo> amigosSelecionadosObservableList;
+    ObservableList<Amigo> amigosSelecionadosObservableList = FXCollections.observableArrayList();
 
     @FXML
     private Button addAmigo;
@@ -56,18 +56,17 @@ public class AdicaoDeAmigoController implements Initializable {
     @FXML
     private Button cancelar;
 
-    private boolean verificacao = false;
 
     @FXML
     void adicionarAmigo(ActionEvent event) {
 
+        Amigo a = todosAmigosList.getSelectionModel().getSelectedItem();
+        Grupo g = selecioneGrupo.getSelectionModel().getSelectedItem();
+
         if(selecioneGrupo != null && todosAmigosList != null) {
 
-            Amigo a = todosAmigosList.getSelectionModel().getSelectedItem();
-            Grupo g = selecioneGrupo.getSelectionModel().getSelectedItem();
             f.addAmigoAoGrupo(a, g);
-
-            verificacao = true;
+            atualizar();
         }
 
     }
@@ -78,23 +77,20 @@ public class AdicaoDeAmigoController implements Initializable {
         Amigo a = todosAmigosList.getSelectionModel().getSelectedItem();
         Grupo g = selecioneGrupo.getSelectionModel().getSelectedItem();
         f.rmvAmigoDoGrupo(g, a);
+        atualizar();
 
     }
 
     @FXML
     void salvarAdicaoDeAmigo(ActionEvent event) {
-
-        if(verificacao == true) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Amigo(s) adicionado(s)");
             alert.setContentText("Informações salvas com sucesso!");
-        }
     }
 
     @FXML
     void selecionarGrupo(ActionEvent event) {
         selecioneGrupo.setItems(grupoObservableList);
-        // atualizar();
     }
 
     @FXML
@@ -115,15 +111,16 @@ public class AdicaoDeAmigoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-
+        atualizar();
     }
 
     public void atualizar() {
 
         selecioneGrupo.setItems(grupoObservableList);
         todosAmigosList.setItems(amigoObservableList);
-        amigosSelecionadosList.setItems(amigosSelecionadosObservableList);
+
+        amigosSelecionadosObservableList = FXCollections.observableArrayList();
+        amigosSelecionadosList.setItems((n.amigosEmGrupo(selecioneGrupo.getSelectionModel().getSelectedItem())));
     }
 }
 

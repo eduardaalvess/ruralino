@@ -84,7 +84,7 @@ public class Negocio implements Serializable {
             return false;
         } else {
             g.addAmigo(a);
-            g.setSorteados(false);
+            // g.setSorteados(false);
             return true;
         }
     }
