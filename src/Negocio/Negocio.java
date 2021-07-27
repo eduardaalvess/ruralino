@@ -41,8 +41,6 @@ public class Negocio implements Serializable {
 
     private Negocio() {
 
-        super();
-
         this.repositorioAmigo = RepositorioAmigo.getInstance();
         this.repositorioGrupo = RepositorioGrupo.getInstance();
         this.repositorioPresentes = RepositorioPresentes.getInstance();

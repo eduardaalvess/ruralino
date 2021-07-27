@@ -40,6 +40,7 @@ public class RepositorioAmigo implements Serializable {
             fis = new FileInputStream(in);
             ois = new ObjectInputStream(fis);
             Object obj = ois.readObject();
+            instanciaLocal = (RepositorioAmigo) obj;
         } catch (Exception exception) {
             instanciaLocal = new RepositorioAmigo(amg);
         }
@@ -48,7 +49,7 @@ public class RepositorioAmigo implements Serializable {
                 try {
                     ois.close();
                 } catch (IOException ioException) {
-                    ioException.printStackTrace();
+
                 }
             }
         }
@@ -76,7 +77,7 @@ public class RepositorioAmigo implements Serializable {
                 try {
                     oos.close();
                 } catch (IOException ioException) {
-                    ioException.printStackTrace();
+
                 }
             }
         }
@@ -89,8 +90,9 @@ public class RepositorioAmigo implements Serializable {
             return true;
         } else {
             System.out.println("Apelido já existe");
+            return false;
         }
-        return false;
+
     }
 
 

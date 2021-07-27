@@ -43,7 +43,7 @@ public class RepositorioPresentes implements Serializable {
                 try {
                     ois.close();
                 } catch (IOException ioException) {
-                    ioException.printStackTrace();
+
                 }
             }
         }
@@ -71,7 +71,7 @@ public class RepositorioPresentes implements Serializable {
                 try {
                     oos.close();
                 } catch (IOException ioException) {
-                    ioException.printStackTrace();
+
                 }
             }
         }

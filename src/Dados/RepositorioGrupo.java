@@ -42,6 +42,7 @@ public class RepositorioGrupo implements Serializable {
             fis = new FileInputStream(in);
             ois = new ObjectInputStream(fis);
             Object obj = ois.readObject();
+            instanciaLocal = (RepositorioGrupo) obj;
         } catch (Exception e) {
              instanciaLocal = new RepositorioGrupo(gp);
         } finally {
@@ -49,7 +50,7 @@ public class RepositorioGrupo implements Serializable {
                 try {
                     ois.close();
                 } catch (IOException ioException) {
-                    ioException.printStackTrace();
+
                 }
             }
         }
@@ -77,7 +78,7 @@ public class RepositorioGrupo implements Serializable {
                 try {
                     oos.close();
                 } catch (IOException ioException) {
-                    ioException.printStackTrace();
+
                 }
             }
         }
