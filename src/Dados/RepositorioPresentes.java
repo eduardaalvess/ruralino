@@ -36,6 +36,7 @@ public class RepositorioPresentes implements Serializable {
             fis = new FileInputStream(in);
             ois = new ObjectInputStream(fis);
             Object obj = ois.readObject();
+            instanciaLocal = (RepositorioPresentes) obj;
         } catch (Exception e) {
             instanciaLocal = new RepositorioPresentes(pres);
         } finally {
@@ -56,7 +57,7 @@ public class RepositorioPresentes implements Serializable {
         if(instance == null) {
             return;
         }
-        File out = new File("src/grupos.dat");
+        File out = new File("src/presentes.dat");
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
 
@@ -78,12 +79,7 @@ public class RepositorioPresentes implements Serializable {
     }
 
     public boolean salvarPresente(Presente p) {
-        try {
-            this.presentes.add(p);
-        } catch (Exception e) {
-            System.out.println("Erro.");
-            return false;
-        }
+        this.presentes.add(p);
         return true;
     }
 

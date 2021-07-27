@@ -75,7 +75,8 @@ public class CadastroAmigoController implements Initializable {
 
         }
 
-        if(nome != null && nome.length() > 0 && apelido != null && apelido.length() > 0 && senha != null && senha.length() > 0) {
+
+        else {
 
             validarCadastroAmigo();
             clean();
@@ -85,6 +86,7 @@ public class CadastroAmigoController implements Initializable {
     }
 
     public void validarCadastroAmigo() {
+
         f.salvarAmigo(cadastroNome.getText(), cadastroApelido.getText(), cadastroSenha.getText());
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);

@@ -85,13 +85,13 @@ public class RepositorioGrupo implements Serializable {
     }
 
     public boolean salvarGrupo(Grupo g) {
-        if(verificarNomeGrupo(g) == null) {
+       // if(verificarNomeGrupo(g) == null) {
             this.grupos.add(g);
             return true;
-        } else {
-            System.out.println("Nome já existe");
-        }
-        return false;
+       // } else {
+        //    System.out.println("Nome já existe");
+      //  }
+
     }
 
     public boolean atualizarGrupo(Grupo grupo) {
@@ -132,6 +132,8 @@ public class RepositorioGrupo implements Serializable {
         }
     }
 
+    /*
+
     public Grupo verificarNomeGrupo(Grupo nome) {
         for(Grupo g : grupos) {
             if(g.getNomeDoGrupo().equals(nome)) {
@@ -151,6 +153,8 @@ public class RepositorioGrupo implements Serializable {
         return null;
 
     }
+
+     */
 
     public List<Grupo> grupoList() {
         return grupos;

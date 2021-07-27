@@ -1,5 +1,6 @@
 package GUI.Controllers;
 
+import Negocio.Fachada;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -22,6 +23,8 @@ public class CadastroPresentesController {
     @FXML
     private Button salvarCadastroPresentes;
 
+    Fachada f = Fachada.getInstance();
+
     @FXML
     void salvarPresentes(ActionEvent event) {
 
@@ -41,11 +44,19 @@ public class CadastroPresentesController {
             alert.showAndWait();
 
         } else {
+            f.salvarPresentes(descricaoPresentes.getText(), categoriaPresentes.getText(), precoPresentes.getText());
 
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Informação salva!");
+            alert.setContentText("Presente salvo com sucesso!");
+            ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/confirmacao-icon.png"))));
+            image.setFitHeight(40);
+            image.setFitWidth(40);
+            alert.getDialogPane().setGraphic(image);
+            alert.showAndWait();
 
+            clean();
             }
-
-           clean();
 
         }
 

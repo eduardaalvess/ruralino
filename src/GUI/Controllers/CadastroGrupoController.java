@@ -65,7 +65,7 @@ public class CadastroGrupoController {
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Informação salva!");
-            alert.setContentText("O grupo " + cadastroNomeGrupo.getText() + " foi salvo com sucesso!");
+            alert.setContentText("O grupo '" + cadastroNomeGrupo.getText() + "' foi salvo com sucesso!");
             ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/confirmacao-icon.png"))));
             image.setFitHeight(40);
             image.setFitWidth(40);

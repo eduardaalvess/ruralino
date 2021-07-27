@@ -2,8 +2,10 @@ package GUI.Controllers;
 
 import Model.Amigo;
 import Model.Presente;
+
 import Negocio.Fachada;
 import Negocio.Negocio;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,8 +22,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+
 import java.net.URL;
-import java.sql.Connection;
+
 import java.util.ResourceBundle;
 
 public class AdicaoDePresentesController implements Initializable {
@@ -31,11 +34,11 @@ public class AdicaoDePresentesController implements Initializable {
 
     @FXML
     private ComboBox<Amigo> selecioneParticipante;
-    ObservableList<Amigo> amigoObservableList = FXCollections.observableList(f.listAmigos());
+    ObservableList<Amigo> amigoObservableList = FXCollections.observableArrayList(f.listAmigos());
 
     @FXML
     private ListView<Presente> todosPresentesList;
-    ObservableList<Presente> presenteObservableList = FXCollections.observableList(f.listPresentes());
+    ObservableList<Presente> presenteObservableList = FXCollections.observableArrayList(f.listPresentes());
 
     @FXML
     private Button salvarAdicionePresente;
@@ -51,23 +54,25 @@ public class AdicaoDePresentesController implements Initializable {
 
     @FXML
     private ListView<Presente> presentesEscolhidosList;
-    ObservableList<Presente> presentesEscolhidosObservableList;
+    ObservableList<Presente> presentesEscolhidosObservableList = FXCollections.observableArrayList();
 
     @FXML
     void adicionarPresente(ActionEvent event) {
 
         Presente p = todosPresentesList.getSelectionModel().getSelectedItem();
         Amigo a = selecioneParticipante.getSelectionModel().getSelectedItem();
-        f.addPresenteAoAmigo(p, a);
 
+        if(p != null && a != null) {
+            f.addPresenteAoAmigo(p, a);
+            atualizar();
+        }
     }
 
     @FXML
     void deletarPresente(ActionEvent event) {
 
-        Presente p = todosPresentesList.getSelectionModel().getSelectedItem();
-        Amigo a = selecioneParticipante.getSelectionModel().getSelectedItem();
-        f.rmvPresenteDoAmigo(p, a);
+        f.rmvPresenteDoAmigo(todosPresentesList.getSelectionModel().getSelectedItem(), selecioneParticipante.getSelectionModel().getSelectedItem());
+        atualizar();
 
     }
 
@@ -77,6 +82,8 @@ public class AdicaoDePresentesController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("blablabla");
         alert.setContentText("Informações salvas com sucesso!");
+        amigoObservableList = FXCollections.observableArrayList(f.listAmigos());
+        atualizar();
     }
 
     @FXML
@@ -104,7 +111,8 @@ public class AdicaoDePresentesController implements Initializable {
     public void atualizar() {
         selecioneParticipante.setItems(amigoObservableList);
         todosPresentesList.setItems(presenteObservableList);
-        presentesEscolhidosList.setItems(presentesEscolhidosObservableList);
+        presentesEscolhidosObservableList = FXCollections.observableArrayList();
+        presentesEscolhidosList.setItems(n.presentesDosAmigos(selecioneParticipante.getSelectionModel().getSelectedItem()));
     }
 
     @Override

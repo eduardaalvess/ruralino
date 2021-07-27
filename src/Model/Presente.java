@@ -58,4 +58,8 @@ public class Presente implements Serializable {
         this.amigos.remove(amigo);
     }
 
+    @Override
+    public String toString() {
+        return String.format(this.categoria + " / " + this.descricao);
+    }
 }

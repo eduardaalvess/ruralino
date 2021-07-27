@@ -85,17 +85,23 @@ public class RepositorioAmigo implements Serializable {
 
 
     public boolean salvarAmigo(Amigo a) {
-        if(verificarApelido(a) == null) {
+       // if(verificarApelido(a) == null) {
             this.amigos.add(a);
             return true;
-        } else {
+       // }
+
+        /*
+        else {
             System.out.println("Apelido já existe");
             return false;
         }
 
+         */
+
     }
 
 
+    /*
     public Amigo verificarApelido(Amigo apelido) {
         for(Amigo a: amigos) {
             if(a.getApelido().equals(apelido)) {
@@ -114,6 +120,8 @@ public class RepositorioAmigo implements Serializable {
 
         return null;
     }
+
+     */
 
     public List<Amigo> amigoList() {
         return amigos;
