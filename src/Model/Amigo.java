@@ -52,6 +52,14 @@ public class Amigo {
         this.presentes = presentes;
     }
 
+    public void addPresente(Presente presente) {
+        this.presentes.add(presente);
+    }
+
+    public void removePresente(Presente presente) {
+        this.presentes.remove(presente);
+    }
+
 
     @Override
     public String toString() {

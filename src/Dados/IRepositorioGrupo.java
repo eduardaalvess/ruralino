@@ -10,4 +10,6 @@ public interface IRepositorioGrupo {
     boolean deletarGrupo(String g);
 
     List<Grupo> grupoList();
+
+    boolean atualizarGrupo(Grupo grupo);
 }

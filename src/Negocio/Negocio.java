@@ -1,17 +1,22 @@
 package Negocio;
 
-import Dados.IRepositorioAmigo;
-import Dados.IRepositorioGrupo;
-import Dados.IRepositorioPresentes;
 import Dados.RepositorioAmigo;
 import Dados.RepositorioGrupo;
 import Dados.RepositorioPresentes;
+
 import Model.Amigo;
 import Model.Grupo;
 import Model.Presente;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.time.LocalDate;
+
+import java.util.Collections;
 import java.util.List;
 
 public class Negocio {
@@ -64,19 +69,88 @@ public class Negocio {
     }
 
     public boolean addAmigoAoGrupo(Amigo a, Grupo g) {
-        //TO-DO
+        if(g.getAmigos().contains(a)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Amigo já está no grupo");
+            alert.setContentText(a.getNome() + " já está no grupo " + g.getNomeDoGrupo());
+            ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/sign-error-icon.png"))));
+            image.setFitHeight(45);
+            image.setFitWidth(45);
+            alert.getDialogPane().setGraphic(image);
+            alert.showAndWait();
+            return false;
+        }
+        if(a == null) {
+            return false;
+        }
+        if(g == null) {
+            return false;
+        } else {
+            g.addAmigo(a);
+            g.setSorteados(false);
+            return true;
+        }
+    }
+
+    public boolean rmvAmigoDoGrupo(Grupo g, Amigo a) {
+        if(g == null || a == null) {
+            return false;
+        }
+        if(g != null && a != null){
+        for(int i = 0; i < grupoList().size(); i++) {
+            if (grupoList().get(i).equals(g)) {
+                grupoList().get(i).removeAmigo(a);
+                return true;
+            }
+        }
+        }
+
+        return false;
     }
 
     public boolean addPresenteAoAmigo(Presente p, Amigo a) {
-        //TO-DO
+        if(a.getPresentes().contains(p)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Presente já foi adicionado");
+            alert.setContentText("Presente já adicionado");
+            ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/sign-error-icon.png"))));
+            image.setFitHeight(45);
+            image.setFitWidth(45);
+            alert.getDialogPane().setGraphic(image);
+            alert.showAndWait();
+            return false;
+        }
+        if(p == null) {
+            return false;
+        }
+        if(a == null) {
+            return false;
+        }
+        else {
+            a.addPresente(p);
+            return true;
+        }
     }
 
     public boolean rmvPresenteDoAmigo(Presente p, Amigo a) {
-        //TO-DO
+        if(p == null || a == null) {
+            return false;
+        }
+        else {
+            for(int i = 0; i < presenteList().size(); i++) {
+                if(presenteList().get(i).equals(p)) {
+                    presenteList().get(i).removeAmigo(a);
+                    return true;
+                }
+            }
+        }
+
+        return false;
+
     }
 
     /*
-    ---------------GRUPOS---------------
+    -----------------------GRUPOS-------------------------
      */
 
     public boolean salvarGrupo(String nome, LocalDate dataDoSorteio) {
@@ -93,14 +167,6 @@ public class Negocio {
         }
     }
 
-    public boolean addAmigoAoGrupo(Grupo g, Amigo a) {
-        //TO-DO
-    }
-
-    public boolean rmvAmigoDoGrupo(Grupo g, Amigo a) {
-        //TO-DO
-    }
-
     List<Grupo> grupoList() {
         return this.repositorioGrupo.grupoList();
     }
@@ -110,7 +176,7 @@ public class Negocio {
     }
 
     /*
-    -------------------PRESENTES------------------
+    -----------------------PRESENTES-------------------------
      */
 
     public boolean salvarPresentes(String categoria, String descricao, String preco) {
@@ -133,14 +199,70 @@ public class Negocio {
     }
 
     /*
-    --------------SORTEIO--------------
+    -----------------------SORTEIO-------------------------
      */
 
-    public boolean sorteio() {
-        //TO-DO
+    public boolean sorteio(Grupo gp) {
+        if(gp == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setContentText("Selecione um grupo válido");
+            ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/sign-error-icon.png"))));
+            image.setFitHeight(45);
+            image.setFitWidth(45);
+            alert.getDialogPane().setGraphic(image);
+            alert.showAndWait();
+            return false;
+        }
+        if(gp.getDataSorteio().isAfter(LocalDate.now())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("O sorteio ainda não pode ser realizado");
+            alert.setContentText("Eu sei que a ansiedade está demais! " +
+                    "Mas a data do sorteio ainda não chegou!");
+            ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/sign-error-icon.png"))));
+            image.setFitHeight(45);
+            image.setFitWidth(45);
+            alert.getDialogPane().setGraphic(image);
+            alert.showAndWait();
+            return false;
+        }
+        else {
+            Collections.shuffle(gp.getAmigos());
+            gp.setSorteados(true);
+            repositorioGrupo.atualizarGrupo(gp);
+            repositorioGrupo.amigosSecretos(gp);
+            return true;
+        }
     }
 
-    public boolean consultarAmigoSecreto() {
-        //TO-DO
+    public Amigo consultarAmigoSecreto(Grupo g, Amigo a, String senha) {
+        return null;
+        //TO DO
+    }
+
+     /*
+    -----------------------OBSERVABLE LIST-------------------------
+     */
+
+    public ObservableList<Amigo> amigosEmGrupo(Grupo g) {
+        for(int i = 0; i < grupoList().size(); i++) {
+            if(grupoList().get(i).equals(g)) {
+                return FXCollections.observableArrayList(grupoList().get(i).getAmigos());
+            }
+        }
+
+        return null;
+
+    }
+
+    public ObservableList<Presente> presentesDosAmigos(Amigo a) {
+        for(int i = 0; i < amigoList().size(); i++) {
+            if(amigoList().get(i).equals(a)) {
+                return FXCollections.observableArrayList(amigoList().get(i).getPresentes());
+            }
+        }
+
+        return null;
+
     }
 }

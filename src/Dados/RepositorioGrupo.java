@@ -1,6 +1,5 @@
 package Dados;
 
-import Model.Amigo;
 import Model.Grupo;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
@@ -90,6 +89,20 @@ public class RepositorioGrupo implements IRepositorioGrupo {
     }
 
     @Override
+    public boolean atualizarGrupo(Grupo grupo) {
+        for (Grupo g : grupos) {
+            if(g.getNomeDoGrupo().equals(grupo.getNomeDoGrupo())) {
+                grupos.remove(g);
+                grupos.add(grupo);
+                return true;
+            }
+        }
+
+        return false;
+
+    }
+
+    @Override
     public boolean deletarGrupo(String g) {
         for (Grupo gp : grupos) {
             if(gp.getNomeDoGrupo().equals(g)) {
@@ -103,6 +116,21 @@ public class RepositorioGrupo implements IRepositorioGrupo {
     @Override
     public List<Grupo> grupoList() {
         return grupos;
+    }
+
+    public void amigosSecretos(Grupo grupo) {
+        for(int i = 0; i < grupo.getAmigos().size(); i++) {
+            if(i + 1 == grupo.getAmigos().size()) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Sorteio do grupo " + grupo.getNomeDoGrupo());
+                alert.setContentText(grupo.getAmigos().get(i).getNome() + " tirou " + grupo.getAmigos().get(0).getNome());
+                ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/wrapped-gift.png"))));
+                image.setFitWidth(30);
+                image.setFitHeight(30);
+                alert.getDialogPane().setGraphic(image);
+                alert.showAndWait();
+            }
+        }
     }
 
     public Grupo verificarNomeGrupo(Grupo nome) {

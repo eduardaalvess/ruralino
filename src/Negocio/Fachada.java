@@ -42,6 +42,10 @@ public class Fachada {
         negocios.addAmigoAoGrupo(a, g);
     }
 
+    public void rmvAmigoDoGrupo(Grupo g, Amigo a) {
+        negocios.rmvAmigoDoGrupo(g, a);
+    }
+
     public void addPresenteAoAmigo(Presente p, Amigo a) {
         negocios.addPresenteAoAmigo(p, a);
     }
@@ -56,14 +60,6 @@ public class Fachada {
 
     public void salvarGrupo(String nome, LocalDate dataDoSorteio) {
         negocios.salvarGrupo(nome, dataDoSorteio);
-    }
-
-    public void addAmigoAoGrupo(Grupo g, Amigo a) {
-        negocios.addAmigoAoGrupo(g, a);
-    }
-
-    public void rmvAmigoDoGrupo(Grupo g, Amigo a) {
-        negocios.rmvAmigoDoGrupo(g, a);
     }
 
     public List<Grupo> listGrupo() {
@@ -82,4 +78,16 @@ public class Fachada {
         return negocios.listPresentes();
     }
 
+    /*
+    -----------------------SORTEIO-------------------------
+     */
+
+
+    public boolean sorteio(Grupo gp) {
+        return negocios.sorteio(gp);
+    }
+
+    public Amigo consultarAmigoSecreto(Grupo g, Amigo a, String senha) {
+        return consultarAmigoSecreto(g, a, senha);
+    }
 }

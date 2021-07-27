@@ -1,10 +1,13 @@
 package Model;
 
+import java.util.ArrayList;
+
 public class Presente {
 
     private String categoria;
     private String descricao;
     private String preco;
+    private ArrayList<Amigo> amigos;
 
 
     public Presente() {
@@ -40,6 +43,18 @@ public class Presente {
 
     public void setPreco(String preco) {
         this.preco = preco;
+    }
+
+    public ArrayList<Amigo> getAmigos() {
+        return amigos;
+    }
+
+    public void addAmigo(Amigo amigo) {
+        this.amigos.add(amigo);
+    }
+
+    public void removeAmigo(Amigo amigo) {
+        this.amigos.remove(amigo);
     }
 
 }
