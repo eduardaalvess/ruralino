@@ -20,6 +20,7 @@ public class Grupo implements Serializable {
     public Grupo(String nomeDoGrupo, LocalDate dataSorteio){
         this.nomeDoGrupo = nomeDoGrupo;
         this.dataSorteio = dataSorteio;
+        amigos = new ArrayList<>();
     }
 
     public String getNomeDoGrupo() {
@@ -53,6 +54,7 @@ public class Grupo implements Serializable {
     public void setAmigos(ArrayList<Amigo> amigos) {
         this.amigos = amigos;
     }
+
 
     public void addAmigo(Amigo amigo) {
         this.amigos.add(amigo);

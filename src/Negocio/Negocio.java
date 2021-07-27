@@ -66,6 +66,8 @@ public class Negocio implements Serializable {
     }
 
     public boolean addAmigoAoGrupo(Amigo a, Grupo g) {
+
+        /**
         if(g.getAmigos().contains(a)) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Amigo já está no grupo");
@@ -80,13 +82,13 @@ public class Negocio implements Serializable {
         if(a == null) {
             return false;
         }
-        if(g == null) {
-            return false;
-        } else {
+         else {
+
+         **/
             g.addAmigo(a);
-            // g.setSorteados(false);
+            g.setSorteados(false);
             return true;
-        }
+
     }
 
     public boolean rmvAmigoDoGrupo(Grupo g, Amigo a) {
@@ -215,7 +217,7 @@ public class Negocio implements Serializable {
             return false;
         }
         else {
-            Collections.shuffle(gp.getAmigos());
+            //Collections.shuffle(gp.getAmigos);
             gp.setSorteados(true);
             // repositorioGrupo.atualizarGrupo(gp);
             // repositorioGrupo.amigosSecretos(gp);
