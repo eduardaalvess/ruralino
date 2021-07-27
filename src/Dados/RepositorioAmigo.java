@@ -11,6 +11,9 @@ import java.util.List;
 
 public class RepositorioAmigo implements Serializable, IRepositorioAmigo {
 
+
+    private static final long serialVersionUID = 2906642554793891381L;
+
     private ArrayList<Amigo> amigos;
     private static RepositorioAmigo instance;
 

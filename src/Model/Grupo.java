@@ -1,9 +1,10 @@
 package Model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Grupo {
+public class Grupo implements Serializable {
 
     private String nomeDoGrupo;
     private LocalDate dataSorteio;
@@ -59,6 +60,11 @@ public class Grupo {
 
     public void removeAmigo(Amigo amigo) {
         this.amigos.remove(amigo);
+    }
+
+    @Override
+    public String toString() {
+        return this.nomeDoGrupo;
     }
 }
 

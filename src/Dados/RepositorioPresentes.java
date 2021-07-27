@@ -8,6 +8,8 @@ import java.util.List;
 
 public class RepositorioPresentes implements Serializable, IRepositorioPresentes {
 
+    private static final long serialVersionUID = 2906642554793891381L;
+
     private ArrayList<Presente> presentes;
     private static RepositorioPresentes instance;
 

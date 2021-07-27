@@ -9,8 +9,12 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RepositorioGrupo implements IRepositorioGrupo {
+public class RepositorioGrupo implements Serializable, IRepositorioGrupo {
+
+    private static final long serialVersionUID = 2906642554793891381L;
+
     private ArrayList<Grupo> grupos;
+
     private static RepositorioGrupo instance;
 
     public static RepositorioGrupo getInstance() {
@@ -21,6 +25,7 @@ public class RepositorioGrupo implements IRepositorioGrupo {
     }
 
     public RepositorioGrupo(ArrayList<Grupo> grupos) {
+        super();
         this.grupos = grupos;
     }
 

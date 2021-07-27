@@ -1,8 +1,9 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Presente {
+public class Presente implements Serializable {
 
     private String categoria;
     private String descricao;

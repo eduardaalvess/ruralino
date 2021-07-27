@@ -1,6 +1,8 @@
 package GUI.Controllers;
 
 
+import Negocio.Fachada;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +18,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
-import java.sql.Connection;
+
 import java.time.LocalDate;
 
 public class CadastroGrupoController {
@@ -32,6 +34,8 @@ public class CadastroGrupoController {
 
     @FXML
     private Button addAmigosButton;
+
+    Fachada f = Fachada.getInstance();
 
     @FXML
     void adicionarAmigos(ActionEvent event) throws IOException {
@@ -55,9 +59,19 @@ public class CadastroGrupoController {
         String nome = cadastroNomeGrupo.getText();
         LocalDate data = dataSorteio.getValue();
 
-        if(nome != null && nome.length() > 0 && dataSorteio != null) {
+        if(nome != null && nome.length() > 0 && data != null) {
 
-            validarCadastroGrupo();
+            f.salvarGrupo(cadastroNomeGrupo.getText(), dataSorteio.getValue());
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Informação salva!");
+            alert.setContentText("O grupo " + cadastroNomeGrupo.getText() + " foi salvo com sucesso!");
+            ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/confirmacao-icon.png"))));
+            image.setFitHeight(40);
+            image.setFitWidth(40);
+            alert.getDialogPane().setGraphic(image);
+            alert.showAndWait();
+
             clean();
 
         } else {
@@ -70,10 +84,6 @@ public class CadastroGrupoController {
             alert.getDialogPane().setGraphic(image);
             alert.showAndWait();
         }
-    }
-
-    public void validarCadastroGrupo() {
-
     }
 
     public void clean() {

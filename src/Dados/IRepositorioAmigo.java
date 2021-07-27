@@ -1,7 +1,6 @@
 package Dados;
 
 import Model.Amigo;
-import Model.Presente;
 
 import java.util.List;
 

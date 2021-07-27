@@ -1,8 +1,6 @@
 package Negocio;
 
-import Dados.RepositorioAmigo;
-import Dados.RepositorioGrupo;
-import Dados.RepositorioPresentes;
+import Dados.*;
 
 import Model.Amigo;
 import Model.Grupo;
@@ -14,14 +12,19 @@ import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import java.util.Collections;
 import java.util.List;
 
-public class Negocio {
+public class Negocio implements Serializable {
 
     private static Negocio instance;
+
+    @Serial
+    private static final long serialVersionUID = 2906642554793891381L;
 
     private RepositorioAmigo repositorioAmigo;
     private RepositorioGrupo repositorioGrupo;
@@ -171,7 +174,7 @@ public class Negocio {
         return this.repositorioGrupo.grupoList();
     }
 
-    public List<Grupo> listGrupo() {
+    public List<Grupo> listGrupos() {
         return this.grupoList();
     }
 
@@ -229,8 +232,8 @@ public class Negocio {
         else {
             Collections.shuffle(gp.getAmigos());
             gp.setSorteados(true);
-            repositorioGrupo.atualizarGrupo(gp);
-            repositorioGrupo.amigosSecretos(gp);
+            // repositorioGrupo.atualizarGrupo(gp);
+            // repositorioGrupo.amigosSecretos(gp);
             return true;
         }
     }

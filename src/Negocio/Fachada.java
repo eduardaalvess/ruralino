@@ -62,8 +62,8 @@ public class Fachada {
         negocios.salvarGrupo(nome, dataDoSorteio);
     }
 
-    public List<Grupo> listGrupo() {
-        return negocios.listGrupo();
+    public List<Grupo> listGrupos() {
+        return negocios.grupoList();
     }
 
     /*
