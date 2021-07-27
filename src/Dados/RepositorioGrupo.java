@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RepositorioGrupo {
+public class RepositorioGrupo implements IRepositorioGrupo {
     private ArrayList<Grupo> grupos;
     private static RepositorioGrupo instance;
 
@@ -75,6 +75,7 @@ public class RepositorioGrupo {
         }
     }
 
+    @Override
     public boolean salvarGrupo(Grupo g) {
         try {
             this.grupos.add(g);
@@ -85,6 +86,7 @@ public class RepositorioGrupo {
         return true;
     }
 
+    @Override
     public boolean deletarGrupo(String g) {
         for (Grupo gp : grupos) {
             if(gp.getNomeDoGrupo().equals(g)) {
@@ -95,7 +97,16 @@ public class RepositorioGrupo {
         return false;
     }
 
-    public List<Grupo> grupoList(Grupo grupo) {
+    @Override
+    public List<Grupo> grupoList() {
+        return grupos;
+    }
+
+    /**
+     *
+
+    @Override
+    public List<Grupo> grupoList() {
         List<Grupo> list = new ArrayList<Grupo>();
         for(Grupo g : grupos) {
             if(g.getNomeDoGrupo().equals(grupo)) {
@@ -104,4 +115,5 @@ public class RepositorioGrupo {
         }
         return list;
     }
+    **/
 }

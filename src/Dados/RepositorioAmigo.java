@@ -10,7 +10,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RepositorioAmigo implements Serializable {
+public class RepositorioAmigo implements Serializable, IRepositorioAmigo {
 
     private ArrayList<Amigo> amigos;
     private static RepositorioAmigo instance;
@@ -81,6 +81,7 @@ public class RepositorioAmigo implements Serializable {
     }
 
 
+    @Override
     public boolean salvarAmigo(Amigo a) {
         if(verificarApelido(a) == null) {
             this.amigos.add(a);
@@ -91,10 +92,12 @@ public class RepositorioAmigo implements Serializable {
         return false;
     }
 
+    @Override
     public List<Amigo> amigoList() {
         return amigos;
     }
 
+    @Override
     public Amigo verificarApelido(Amigo apelido) {
         for(Amigo a: amigos) {
             if(a.getApelido().equals(apelido)) {
@@ -114,10 +117,12 @@ public class RepositorioAmigo implements Serializable {
         return null;
     }
 
+    @Override
     public String getNomes(Amigo amigo) {
         return amigo.getNome();
     }
 
+    @Override
     public boolean addPresenteDoAmigo(Amigo a, Presente p) {
         for(int i = 0; i < amigos.size(); i++) {
             if(amigos.get(i).getNome().equals(a.getNome())) {
@@ -128,6 +133,7 @@ public class RepositorioAmigo implements Serializable {
         return false;
     }
 
+    @Override
     public boolean rmvPresenteDoAmigo(Amigo a, Presente p) {
         for(int i = 0; i < amigos.size();i++) {
             if(amigos.get(i).getNome().equals(a.getNome())) {
