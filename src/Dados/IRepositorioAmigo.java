@@ -13,8 +13,4 @@ public interface IRepositorioAmigo {
     Amigo verificarApelido(Amigo apelido);
 
     String getNomes(Amigo amigo);
-
-    boolean addPresenteDoAmigo(Amigo a, Presente p);
-
-    boolean rmvPresenteDoAmigo(Amigo a, Presente p);
 }

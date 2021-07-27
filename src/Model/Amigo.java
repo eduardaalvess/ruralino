@@ -52,15 +52,6 @@ public class Amigo {
         this.presentes = presentes;
     }
 
-    public void addPresenteDoAmigo(Presente p) {
-        this.presentes.add(p);
-    }
-    public void rmvPresenteDoAmigo(Presente p) {
-        if(this.presentes.contains(p)) {
-            this.presentes.remove(p);
-        }
-    }
-
 
     @Override
     public String toString() {

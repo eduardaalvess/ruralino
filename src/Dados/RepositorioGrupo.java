@@ -2,6 +2,9 @@ package Dados;
 
 import Model.Amigo;
 import Model.Grupo;
+import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -77,13 +80,13 @@ public class RepositorioGrupo implements IRepositorioGrupo {
 
     @Override
     public boolean salvarGrupo(Grupo g) {
-        try {
+        if(verificarNomeGrupo(g) == null) {
             this.grupos.add(g);
-        } catch (Exception e) {
-            System.out.println("Erro");
-            return false;
+            return true;
+        } else {
+            System.out.println("Nome já existe");
         }
-        return true;
+        return false;
     }
 
     @Override
@@ -102,18 +105,23 @@ public class RepositorioGrupo implements IRepositorioGrupo {
         return grupos;
     }
 
-    /**
-     *
-
-    @Override
-    public List<Grupo> grupoList() {
-        List<Grupo> list = new ArrayList<Grupo>();
+    public Grupo verificarNomeGrupo(Grupo nome) {
         for(Grupo g : grupos) {
-            if(g.getNomeDoGrupo().equals(grupo)) {
-                list.add(g);
+            if(g.getNomeDoGrupo().equals(nome)) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Nome existente");
+                alert.setContentText("Esse nome já existe");
+                ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/sign-error-icon.png"))));
+                image.setFitHeight(45);
+                image.setFitWidth(45);
+                alert.getDialogPane().setGraphic(image);
+                alert.showAndWait();
+            } else {
+                return g;
             }
         }
-        return list;
+
+        return null;
+
     }
-    **/
 }

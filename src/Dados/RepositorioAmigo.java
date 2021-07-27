@@ -121,26 +121,4 @@ public class RepositorioAmigo implements Serializable, IRepositorioAmigo {
     public String getNomes(Amigo amigo) {
         return amigo.getNome();
     }
-
-    @Override
-    public boolean addPresenteDoAmigo(Amigo a, Presente p) {
-        for(int i = 0; i < amigos.size(); i++) {
-            if(amigos.get(i).getNome().equals(a.getNome())) {
-                a.addPresenteDoAmigo(p);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override
-    public boolean rmvPresenteDoAmigo(Amigo a, Presente p) {
-        for(int i = 0; i < amigos.size();i++) {
-            if(amigos.get(i).getNome().equals(a.getNome())) {
-                a.rmvPresenteDoAmigo(p);
-                return true;
-            }
-        }
-        return false;
-    }
 }
