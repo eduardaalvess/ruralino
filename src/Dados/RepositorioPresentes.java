@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RepositorioPresentes implements Serializable, IRepositorioPresentes {
+public class RepositorioPresentes implements Serializable {
 
     private static final long serialVersionUID = 2906642554793891381L;
 
@@ -77,7 +77,6 @@ public class RepositorioPresentes implements Serializable, IRepositorioPresentes
         }
     }
 
-    @Override
     public boolean salvarPresente(Presente p) {
         try {
             this.presentes.add(p);
@@ -88,7 +87,6 @@ public class RepositorioPresentes implements Serializable, IRepositorioPresentes
         return true;
     }
 
-    @Override
     public boolean deletarPresente(String d) {
         for(int i = 0; i < presentes.size(); i++) {
             if(presentes.get(i).getDescricao().equals(d)) {
@@ -101,7 +99,6 @@ public class RepositorioPresentes implements Serializable, IRepositorioPresentes
 
     }
 
-    @Override
     public List<Presente> presenteList() {
         return this.presentes;
     }

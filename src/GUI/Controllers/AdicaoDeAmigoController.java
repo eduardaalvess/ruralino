@@ -38,7 +38,7 @@ public class AdicaoDeAmigoController implements Initializable {
 
     @FXML
     private ListView<Amigo> todosAmigosList;
-    ObservableList<Amigo> amigoObservableList = FXCollections.observableList(n.listAmigos());
+    ObservableList<Amigo> amigoObservableList = FXCollections.observableList(f.listAmigos());
 
     @FXML
     private ListView<Amigo> amigosSelecionadosList;

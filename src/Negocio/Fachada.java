@@ -35,7 +35,7 @@ public class Fachada {
     }
 
     public List<Amigo> listAmigos() {
-        return negocios.listAmigos();
+        return negocios.amigoList();
     }
 
     public void addAmigoAoGrupo(Amigo a, Grupo g) {

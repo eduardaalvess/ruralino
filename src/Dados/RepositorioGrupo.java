@@ -9,8 +9,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RepositorioGrupo implements Serializable, IRepositorioGrupo {
+public class RepositorioGrupo implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 2906642554793891381L;
 
     private ArrayList<Grupo> grupos;
@@ -42,7 +43,7 @@ public class RepositorioGrupo implements Serializable, IRepositorioGrupo {
             ois = new ObjectInputStream(fis);
             Object obj = ois.readObject();
         } catch (Exception e) {
-            instanciaLocal = new RepositorioGrupo(gp);
+             instanciaLocal = new RepositorioGrupo(gp);
         } finally {
             if(ois != null) {
                 try {
@@ -82,7 +83,6 @@ public class RepositorioGrupo implements Serializable, IRepositorioGrupo {
         }
     }
 
-    @Override
     public boolean salvarGrupo(Grupo g) {
         if(verificarNomeGrupo(g) == null) {
             this.grupos.add(g);
@@ -93,7 +93,6 @@ public class RepositorioGrupo implements Serializable, IRepositorioGrupo {
         return false;
     }
 
-    @Override
     public boolean atualizarGrupo(Grupo grupo) {
         for (Grupo g : grupos) {
             if(g.getNomeDoGrupo().equals(grupo.getNomeDoGrupo())) {
@@ -107,7 +106,6 @@ public class RepositorioGrupo implements Serializable, IRepositorioGrupo {
 
     }
 
-    @Override
     public boolean deletarGrupo(String g) {
         for (Grupo gp : grupos) {
             if(gp.getNomeDoGrupo().equals(g)) {
@@ -116,11 +114,6 @@ public class RepositorioGrupo implements Serializable, IRepositorioGrupo {
             }
         }
         return false;
-    }
-
-    @Override
-    public List<Grupo> grupoList() {
-        return grupos;
     }
 
     public void amigosSecretos(Grupo grupo) {
@@ -156,5 +149,9 @@ public class RepositorioGrupo implements Serializable, IRepositorioGrupo {
 
         return null;
 
+    }
+
+    public List<Grupo> grupoList() {
+        return grupos;
     }
 }

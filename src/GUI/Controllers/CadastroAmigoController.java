@@ -1,8 +1,10 @@
 package GUI.Controllers;
 
+import Negocio.Fachada;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -15,9 +17,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
-import java.sql.Connection;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class CadastroAmigoController {
+public class CadastroAmigoController implements Initializable {
 
     @FXML
     private TextField cadastroNome;
@@ -34,7 +37,7 @@ public class CadastroAmigoController {
     @FXML
     private Button addPresentesButton;
 
-
+    Fachada f = Fachada.getInstance();
 
     @FXML
     void adicionarPresentes(ActionEvent event) throws IOException {
@@ -82,6 +85,16 @@ public class CadastroAmigoController {
     }
 
     public void validarCadastroAmigo() {
+        f.salvarAmigo(cadastroNome.getText(), cadastroApelido.getText(), cadastroSenha.getText());
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Cadastro salvo!");
+        alert.setContentText("Cadastro salvo com sucesso!");
+        ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/confirmacao-icon.png"))));
+        image.setFitHeight(40);
+        image.setFitWidth(40);
+        alert.getDialogPane().setGraphic(image);
+        alert.showAndWait();
 
     }
 
@@ -91,5 +104,9 @@ public class CadastroAmigoController {
         this.cadastroSenha.setText("");
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }
 

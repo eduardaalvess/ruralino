@@ -21,8 +21,6 @@ import java.util.ResourceBundle;
 
 public class AdicaoDePresentesController implements Initializable {
 
-    private Connection connection;
-
     @FXML
     private ComboBox<String> selecioneParticipante;
     ObservableList<String> Nomes;

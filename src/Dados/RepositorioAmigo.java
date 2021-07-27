@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RepositorioAmigo implements Serializable, IRepositorioAmigo {
+public class RepositorioAmigo implements Serializable {
 
 
     private static final long serialVersionUID = 2906642554793891381L;
@@ -83,7 +83,6 @@ public class RepositorioAmigo implements Serializable, IRepositorioAmigo {
     }
 
 
-    @Override
     public boolean salvarAmigo(Amigo a) {
         if(verificarApelido(a) == null) {
             this.amigos.add(a);
@@ -94,12 +93,7 @@ public class RepositorioAmigo implements Serializable, IRepositorioAmigo {
         return false;
     }
 
-    @Override
-    public List<Amigo> amigoList() {
-        return amigos;
-    }
 
-    @Override
     public Amigo verificarApelido(Amigo apelido) {
         for(Amigo a: amigos) {
             if(a.getApelido().equals(apelido)) {
@@ -119,8 +113,7 @@ public class RepositorioAmigo implements Serializable, IRepositorioAmigo {
         return null;
     }
 
-    @Override
-    public String getNomes(Amigo amigo) {
-        return amigo.getNome();
+    public List<Amigo> amigoList() {
+        return amigos;
     }
 }

@@ -30,15 +30,6 @@ public class Negocio implements Serializable {
     private RepositorioGrupo repositorioGrupo;
     private RepositorioPresentes repositorioPresentes;
 
-    public Negocio() {
-
-        super();
-
-        this.repositorioAmigo = RepositorioAmigo.getInstance();
-        this.repositorioGrupo = RepositorioGrupo.getInstance();
-        this.repositorioPresentes = RepositorioPresentes.getInstance();
-    }
-
     public static Negocio getInstance() {
         if(instance == null) {
             instance = new Negocio();
@@ -46,6 +37,15 @@ public class Negocio implements Serializable {
 
         return instance;
 
+    }
+
+    private Negocio() {
+
+        super();
+
+        this.repositorioAmigo = RepositorioAmigo.getInstance();
+        this.repositorioGrupo = RepositorioGrupo.getInstance();
+        this.repositorioPresentes = RepositorioPresentes.getInstance();
     }
 
     /*
@@ -65,10 +65,6 @@ public class Negocio implements Serializable {
 
     List<Amigo> amigoList() {
         return this.repositorioAmigo.amigoList();
-    }
-
-    public List<Amigo> listAmigos() {
-        return this.amigoList();
     }
 
     public boolean addAmigoAoGrupo(Amigo a, Grupo g) {
@@ -172,10 +168,6 @@ public class Negocio implements Serializable {
 
     List<Grupo> grupoList() {
         return this.repositorioGrupo.grupoList();
-    }
-
-    public List<Grupo> listGrupos() {
-        return this.grupoList();
     }
 
     /*
