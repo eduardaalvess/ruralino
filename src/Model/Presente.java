@@ -20,6 +20,7 @@ public class Presente implements Serializable {
         this.categoria = categoria;
         this.descricao = descricao;
         this.preco = preco;
+        amigos = new ArrayList<>();
     }
 
     public String getCategoria() {
@@ -52,10 +53,6 @@ public class Presente implements Serializable {
 
     public void addAmigo(Amigo amigo) {
         this.amigos.add(amigo);
-    }
-
-    public void removeAmigo(Amigo amigo) {
-        this.amigos.remove(amigo);
     }
 
     @Override

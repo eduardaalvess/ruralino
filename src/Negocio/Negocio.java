@@ -130,21 +130,16 @@ public class Negocio implements Serializable {
     }
 
     public boolean rmvPresenteDoAmigo(Presente p, Amigo a) {
-        if(p == null || a == null) {
-            return false;
-        }
-        else {
-            for(int i = 0; i < presenteList().size(); i++) {
-                if(presenteList().get(i).equals(p)) {
-                    presenteList().get(i).removeAmigo(a);
+
+            for(int i = 0; i < amigoList().size(); i++) {
+                if(amigoList().get(i).getApelido().equals(a.getApelido())) {
+                    a.removePresente(p);
                     return true;
                 }
             }
+
+            return false;
         }
-
-        return false;
-
-    }
 
     /*
     -----------------------GRUPOS-------------------------
