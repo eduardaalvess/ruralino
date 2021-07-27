@@ -1,10 +1,5 @@
 package GUI.Controllers;
 
-import Dados.ConnectionFactory;
-import Dados.DAO.AmigosDAO;
-import Dados.DAO.GrupoDAO;
-import Model.Amigo;
-import Model.Grupo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -78,15 +73,6 @@ public class ConsultarAmigoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        Nomes = FXCollections.observableArrayList();
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        connection = connectionFactory.getConnection();
-        AmigosDAO.getNomes(connection, Nomes);
-        selecioneParticipante.setItems(Nomes);
-
-        Grupos = FXCollections.observableArrayList();
-        GrupoDAO.getGrupos(connection, Grupos);
-        selecioneGrupo.setItems(Grupos);
     }
 }
 

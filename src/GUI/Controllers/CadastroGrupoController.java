@@ -1,8 +1,6 @@
 package GUI.Controllers;
 
 
-import Dados.ConnectionFactory;
-import Dados.DAO.GrupoDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +17,6 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.Date;
 import java.time.LocalDate;
 
 public class CadastroGrupoController {
@@ -77,15 +74,6 @@ public class CadastroGrupoController {
 
     public void validarCadastroGrupo() {
 
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        Connection connection = connectionFactory.getConnection();
-        GrupoDAO grupoDAO = new GrupoDAO();
-
-        if(grupoDAO.create(cadastroNomeGrupo.getText(), dataSorteio.getValue())) {
-
-            System.out.println("Os dados do grupo foram salvos com sucesso");
-
-        }
     }
 
     public void clean() {

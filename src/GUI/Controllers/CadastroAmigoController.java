@@ -1,7 +1,5 @@
 package GUI.Controllers;
 
-import Dados.ConnectionFactory;
-import Dados.DAO.AmigosDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -84,16 +82,6 @@ public class CadastroAmigoController {
     }
 
     public void validarCadastroAmigo() {
-
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        Connection connection = connectionFactory.getConnection();
-        AmigosDAO amigoDAO = new AmigosDAO();
-
-        if(amigoDAO.create(cadastroNome.getText(), cadastroApelido.getText(), cadastroSenha.getText())) {
-
-            System.out.println("Informações salvas com sucesso");
-
-        }
 
     }
 

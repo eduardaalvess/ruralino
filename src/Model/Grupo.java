@@ -1,9 +1,5 @@
 package Model;
 
-import javafx.scene.control.Alert;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 

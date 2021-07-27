@@ -1,11 +1,5 @@
 package GUI.Controllers;
 
-import Dados.ConnectionFactory;
-import Dados.DAO.AmigosDAO;
-import Dados.DAO.PresenteDAO;
-import Model.Amigo;
-import Model.Presente;
-import Negocio.Negocio;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -90,15 +84,7 @@ public class AdicaoDePresentesController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Nomes = FXCollections.observableArrayList();
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        connection = connectionFactory.getConnection();
-        AmigosDAO.getNomes(connection, Nomes);
-        selecioneParticipante.setItems(Nomes);
 
-        Presentes = FXCollections.observableArrayList();
-        PresenteDAO.getPresentes(connection, Presentes);
-        todosPresentesList.setItems(Presentes);
     }
 }
 

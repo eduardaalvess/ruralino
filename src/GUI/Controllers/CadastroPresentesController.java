@@ -1,7 +1,5 @@
 package GUI.Controllers;
 
-import Dados.ConnectionFactory;
-import Dados.DAO.PresenteDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -9,8 +7,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
-import java.sql.Connection;
 
 public class CadastroPresentesController {
 
@@ -46,21 +42,12 @@ public class CadastroPresentesController {
 
         } else {
 
-            ConnectionFactory connectionFactory = new ConnectionFactory();
-            Connection connection = connectionFactory.getConnection();
-            PresenteDAO presenteDAO = new PresenteDAO();
-
-            if (presenteDAO.create(categoriaPresentes.getText(), descricaoPresentes.getText(), precoPresentes.getText())) {
-
-                System.out.println("Os presentes foram salvos com sucesso");
 
             }
 
            clean();
 
         }
-
-    }
 
     public void clean() {
         this.categoriaPresentes.setText("");
