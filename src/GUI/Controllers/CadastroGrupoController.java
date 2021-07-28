@@ -49,6 +49,8 @@ public class CadastroGrupoController {
         addAmigos.setScene(new Scene(root, 700, 500));
         addAmigos.setResizable(false);
         addAmigos.initStyle(StageStyle.TRANSPARENT);
+        Image image = new Image("/Imagens/wrapped-gift.png");
+        addAmigos.getIcons().add(image);
         addAmigos.show();
 
     }

@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -47,6 +48,8 @@ public class SorteioController implements Initializable {
         consulta.setScene(new Scene(root, 700, 500));
         consulta.setResizable(false);
         consulta.initStyle(StageStyle.TRANSPARENT);
+        Image image = new Image("/Imagens/wrapped-gift.png");
+        consulta.getIcons().add(image);
         consulta.show();
 
     }

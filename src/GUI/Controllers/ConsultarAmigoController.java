@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -67,6 +68,8 @@ public class ConsultarAmigoController implements Initializable {
         cancelar.setScene(new Scene(root, 700, 500));
         cancelar.setResizable(false);
         cancelar.initStyle(StageStyle.TRANSPARENT);
+        Image image = new Image("/Imagens/wrapped-gift.png");
+        cancelar.getIcons().add(image);
         cancelar.show();
     }
 

@@ -51,6 +51,8 @@ public class CadastroAmigoController implements Initializable {
         addPresentes.setScene(new Scene(root, 700, 500));
         addPresentes.setResizable(false);
         addPresentes.initStyle(StageStyle.TRANSPARENT);
+        Image image = new Image("/Imagens/wrapped-gift.png");
+        addPresentes.getIcons().add(image);
         addPresentes.show();
 
     }

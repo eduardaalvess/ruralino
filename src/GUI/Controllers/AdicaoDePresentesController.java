@@ -18,6 +18,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -106,6 +107,8 @@ public class AdicaoDePresentesController implements Initializable {
         cancelar.setScene(new Scene(root, 700, 500));
         cancelar.setResizable(false);
         cancelar.initStyle(StageStyle.TRANSPARENT);
+        Image image = new Image("/Imagens/wrapped-gift.png");
+        cancelar.getIcons().add(image);
         cancelar.show();
 
     }
