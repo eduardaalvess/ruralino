@@ -217,10 +217,10 @@ public class Negocio implements Serializable {
             return false;
         }
         else {
-            //Collections.shuffle(gp.getAmigos);
+            Collections.shuffle(gp.getAmigos());
             gp.setSorteados(true);
-            // repositorioGrupo.atualizarGrupo(gp);
-            // repositorioGrupo.amigosSecretos(gp);
+            repositorioGrupo.atualizarGrupo(gp);
+            repositorioGrupo.amigosSecretos(gp);
             return true;
         }
     }

@@ -14,13 +14,12 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+
 import java.net.URL;
-import java.sql.Connection;
+
 import java.util.ResourceBundle;
 
 public class SorteioController implements Initializable {
-
-    private Connection connection;
 
     @FXML
     private ComboBox<String> selecioneGrupo;
@@ -56,6 +55,10 @@ public class SorteioController implements Initializable {
     @FXML
     void selecionarGrupo(ActionEvent event) {
 
+    }
+
+    public void atualizar() {
+        
     }
 
     @Override

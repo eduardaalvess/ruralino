@@ -62,12 +62,9 @@ public class AdicaoDeAmigoController implements Initializable {
 
         Amigo a = todosAmigosList.getSelectionModel().getSelectedItem();
         Grupo g = selecioneGrupo.getSelectionModel().getSelectedItem();
-
-        if(selecioneGrupo != null && todosAmigosList != null) {
-
             f.addAmigoAoGrupo(a, g);
             atualizar();
-        }
+
 
     }
 
@@ -120,7 +117,8 @@ public class AdicaoDeAmigoController implements Initializable {
         todosAmigosList.setItems(amigoObservableList);
 
         amigosSelecionadosObservableList = FXCollections.observableArrayList();
-        amigosSelecionadosList.setItems((n.amigosEmGrupo(selecioneGrupo.getSelectionModel().getSelectedItem())));
+        amigosSelecionadosObservableList = n.amigosEmGrupo(selecioneGrupo.getSelectionModel().getSelectedItem());
+        amigosSelecionadosList.setItems(amigosSelecionadosObservableList);
     }
 }
 
