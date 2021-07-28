@@ -79,11 +79,13 @@ public class AdicaoDePresentesController implements Initializable {
     @FXML
     void salvarAdicionarPresente(ActionEvent event) {
 
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("blablabla");
-        alert.setContentText("Informações salvas com sucesso!");
-        amigoObservableList = FXCollections.observableArrayList(f.listAmigos());
-        atualizar();
+        if(selecioneParticipante != null) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Presentes salvos!");
+            alert.setContentText("Informações salvas com sucesso!");
+            amigoObservableList = FXCollections.observableArrayList(f.listAmigos());
+            atualizar();
+        }
     }
 
     @FXML

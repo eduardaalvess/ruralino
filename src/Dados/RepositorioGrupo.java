@@ -129,7 +129,6 @@ public class RepositorioGrupo implements Serializable {
                 alert.getDialogPane().setGraphic(image);
                 alert.showAndWait();
                 System.out.println(grupo.getAmigos().get(i).getNome() + " tirou " + grupo.getAmigos().get(0).getNome());
-
             }
             else {
                 System.out.println(grupo.getAmigos().get(i).getNome() + " tirou " + grupo.getAmigos().get(i + 1).getNome());

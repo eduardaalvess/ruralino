@@ -68,8 +68,7 @@ public class Negocio implements Serializable {
 
     public boolean addAmigoAoGrupo(Amigo a, Grupo g) {
 
-        /**
-        if(g.getAmigos().contains(a)) {
+        if (g.getAmigos().contains(a)) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Amigo já está no grupo");
             alert.setContentText(a.getNome() + " já está no grupo " + g.getNomeDoGrupo());
@@ -79,24 +78,36 @@ public class Negocio implements Serializable {
             alert.getDialogPane().setGraphic(image);
             alert.showAndWait();
             return false;
-        }
-        if(a == null) {
+        } else if (a == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Amigo não selecionado");
+            alert.setContentText("Você não selecionou ninguém para o grupo '" + g.getNomeDoGrupo() + "'.");
+            ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/sign-error-icon.png"))));
+            image.setFitHeight(45);
+            image.setFitWidth(45);
+            alert.getDialogPane().setGraphic(image);
+            alert.showAndWait();
             return false;
-        }
-         else {
-
-         **/
+        } else {
             g.addAmigo(a);
             g.setSorteados(false);
             return true;
-
+        }
     }
 
     public boolean rmvAmigoDoGrupo(Grupo g, Amigo a) {
         if(g == null || a == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("");
+            alert.setContentText("Presente já adicionado");
+            ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/sign-error-icon.png"))));
+            image.setFitHeight(45);
+            image.setFitWidth(45);
+            alert.getDialogPane().setGraphic(image);
+            alert.showAndWait();
             return false;
         }
-        if(g != null && a != null){
+        else if(g != null && a != null){
         for(int i = 0; i < grupoList().size(); i++) {
             if (grupoList().get(i).equals(g)) {
                 grupoList().get(i).removeAmigo(a);
@@ -104,7 +115,6 @@ public class Negocio implements Serializable {
             }
         }
         }
-
         return false;
     }
 
@@ -196,7 +206,7 @@ public class Negocio implements Serializable {
     public boolean sorteio(Grupo gp) {
         if(gp == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erro");
+            alert.setTitle("Grupo inválido");
             alert.setContentText("Selecione um grupo válido");
             ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/sign-error-icon.png"))));
             image.setFitHeight(45);
@@ -218,7 +228,14 @@ public class Negocio implements Serializable {
             return false;
         }
         else if (gp.isSorteados()){
-
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("O sorteio desse grupo já aconteceu!");
+            alert.setContentText("O grupo '" + gp.getNomeDoGrupo() + "' já foi sorteado!");
+            ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/sign-error-icon.png"))));
+            image.setFitHeight(45);
+            image.setFitWidth(45);
+            alert.getDialogPane().setGraphic(image);
+            alert.showAndWait();
             System.out.println("Esse grupo já foi sorteado");
             return false;
         }

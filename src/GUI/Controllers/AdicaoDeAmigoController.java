@@ -71,7 +71,7 @@ public class AdicaoDeAmigoController implements Initializable {
     @FXML
     void deletarAmigo(ActionEvent event) {
 
-        Amigo a = todosAmigosList.getSelectionModel().getSelectedItem();
+        Amigo a = amigosSelecionadosList.getSelectionModel().getSelectedItem();
         Grupo g = selecioneGrupo.getSelectionModel().getSelectedItem();
         f.rmvAmigoDoGrupo(g, a);
         atualizar();
@@ -80,9 +80,7 @@ public class AdicaoDeAmigoController implements Initializable {
 
     @FXML
     void salvarAdicaoDeAmigo(ActionEvent event) {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Amigo(s) adicionado(s)");
-            alert.setContentText("Informações salvas com sucesso!");
+
     }
 
     @FXML
