@@ -122,13 +122,17 @@ public class RepositorioGrupo implements Serializable {
             if(i + 1 == grupo.getAmigos().size()) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Sorteio do grupo " + grupo.getNomeDoGrupo());
-                alert.setContentText(grupo.getAmigos().get(i).getNome() + " tirou " + grupo.getAmigos().get(0).getNome());
-                System.out.println(grupo.getAmigos().get(i).getNome() + " tirou " + grupo.getAmigos().get(0).getNome());
+                alert.setContentText("O sorteio do grupo '" + grupo.getNomeDoGrupo() + "' foi realizado com sucesso!");
                 ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/wrapped-gift.png"))));
                 image.setFitWidth(30);
                 image.setFitHeight(30);
                 alert.getDialogPane().setGraphic(image);
                 alert.showAndWait();
+                System.out.println(grupo.getAmigos().get(i).getNome() + " tirou " + grupo.getAmigos().get(0).getNome());
+
+            }
+            else {
+                System.out.println(grupo.getAmigos().get(i).getNome() + " tirou " + grupo.getAmigos().get(i + 1).getNome());
             }
         }
     }
