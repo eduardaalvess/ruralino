@@ -1,5 +1,7 @@
 package GUI.Controllers;
 
+import Model.Grupo;
+import Negocio.Fachada;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,9 +23,11 @@ import java.util.ResourceBundle;
 
 public class SorteioController implements Initializable {
 
+    Fachada f = Fachada.getInstance();
+
     @FXML
-    private ComboBox<String> selecioneGrupo;
-    ObservableList<String> Grupos;
+    private ComboBox<Grupo> selecioneGrupo;
+    ObservableList<Grupo> grupoObservableList = FXCollections.observableArrayList(f.listGrupos());
 
     @FXML
     private Button sorteioButton;
@@ -49,7 +53,12 @@ public class SorteioController implements Initializable {
 
     @FXML
     void realizarSorteio(ActionEvent event) {
-
+        f.sorteio(selecioneGrupo.getSelectionModel().getSelectedItem());
+        if (selecioneGrupo == null) {
+            System.out.println("Selecione um grupo!");
+        } else {
+            atualizar();
+        }
     }
 
     @FXML
@@ -58,12 +67,12 @@ public class SorteioController implements Initializable {
     }
 
     public void atualizar() {
-        
+        selecioneGrupo.setItems(grupoObservableList);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        atualizar();
     }
 }
 

@@ -123,6 +123,7 @@ public class RepositorioGrupo implements Serializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Sorteio do grupo " + grupo.getNomeDoGrupo());
                 alert.setContentText(grupo.getAmigos().get(i).getNome() + " tirou " + grupo.getAmigos().get(0).getNome());
+                System.out.println(grupo.getAmigos().get(i).getNome() + " tirou " + grupo.getAmigos().get(0).getNome());
                 ImageView image = new ImageView(new Image(String.valueOf(this.getClass().getResource("/Imagens/wrapped-gift.png"))));
                 image.setFitWidth(30);
                 image.setFitHeight(30);

@@ -11,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import org.w3c.dom.ls.LSOutput;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -204,7 +205,7 @@ public class Negocio implements Serializable {
             alert.showAndWait();
             return false;
         }
-        if(gp.getDataSorteio().isAfter(LocalDate.now())) {
+        else if(gp.getDataSorteio().isAfter(LocalDate.now())) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("O sorteio ainda não pode ser realizado");
             alert.setContentText("Eu sei que a ansiedade está demais! " +
@@ -214,6 +215,11 @@ public class Negocio implements Serializable {
             image.setFitWidth(45);
             alert.getDialogPane().setGraphic(image);
             alert.showAndWait();
+            return false;
+        }
+        else if (gp.isSorteados()){
+
+            System.out.println("Esse grupo já foi sorteado");
             return false;
         }
         else {
